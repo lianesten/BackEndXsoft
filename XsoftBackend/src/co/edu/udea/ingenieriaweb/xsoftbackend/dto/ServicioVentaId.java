@@ -1,5 +1,11 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.dto;
 
+/**
+ * Clase creada para registrar las claves primarias de la tabla ServicioVenta en la 
+ * Basede datos
+ * @author Equipo de desarrollo Xsoft
+ *
+ */
 public class ServicioVentaId  implements java.io.Serializable {
 
 
@@ -37,27 +43,5 @@ public class ServicioVentaId  implements java.io.Serializable {
    public void setIdventa(int idventa) {
        this.idventa = idventa;
    }
-
-
-  public boolean equals(Object other) {
-        if ( (this == other ) ) return true;
-		 if ( (other == null ) ) return false;
-		 if ( !(other instanceof ServicioVentaId) ) return false;
-		 ServicioVentaId castOther = ( ServicioVentaId ) other; 
-        
-		 return (this.getIdservicioVenta()==castOther.getIdservicioVenta())
-&& (this.getIdservicio()==castOther.getIdservicio())
-&& (this.getIdventa()==castOther.getIdventa());
-  }
-  
-  public int hashCode() {
-        int result = 17;
-        
-        result = 37 * result + this.getIdservicioVenta();
-        result = 37 * result + this.getIdservicio();
-        result = 37 * result + this.getIdventa();
-        return result;
-  }   
-
-
+ 
 }

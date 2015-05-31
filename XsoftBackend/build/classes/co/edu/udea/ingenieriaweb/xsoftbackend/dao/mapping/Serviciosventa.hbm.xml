@@ -17,22 +17,22 @@
             </key-property>
         </composite-id>
         
-        <many-to-one name="servicios" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicios" fetch="join"  lazy="proxy">
+        <many-to-one name="servicio" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicio" update="false" insert="false" fetch="join"  lazy="proxy">
             <column name="idservicio"  />
         </many-to-one>
-        <many-to-one name="venta" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta" fetch="join"  lazy="proxy">
+        <many-to-one name="venta" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta" update="false" insert="false" fetch="join"  lazy="proxy">
             <column name="idventa"  />
         </many-to-one>
         <property name="totalventa" type="java.lang.Double">
             <column name="totalventa" />
         </property>
-        <property name="fechaCaducidad" type="java.lang.Date">
+        <property name="fechaCaducidad" type="java.util.Date">
             <column name="fechaCaducidad" />
         </property>
-        <property name="cantidad" type="java.lang.Intenger">
+        <property name="cantidad" type="java.lang.Integer">
             <column name="cantidad" />
         </property>
-        <property name="fechaVenta" type="java.lang.Date">
+        <property name="fechaVenta" type="java.util.Date">
             <column name="fechaVenta"  />
         </property>
     </class>

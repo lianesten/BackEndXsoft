@@ -9,18 +9,18 @@
             <generator class="identity" />
         </id>
         
-        <many-to-one name="cliente" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente" fetch="select">
-            <column name="idCliente" length="60" not-null="true" />
+        <many-to-one name="cliente" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente" fetch="join" lazy="proxy">
+            <column name="idCliente"  />
         </many-to-one>
-        <many-to-one name="usuario" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario" fetch="select">
-            <column name="idUsuario" length="20" not-null="true" />
+        <many-to-one name="usuario" class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario" fetch="join">
+            <column name="idUsuario" />
         </many-to-one>
         
-        <set name="serviciosventas" table="serviciosventa" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="idventa" not-null="true" />
-            </key>
-            <one-to-many class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Serviciosventa" />
-        </set>
+<!--         <set name="serviciosventas" table="serviciosventa" inverse="true" lazy="true" fetch="select"> -->
+<!--             <key> -->
+<!--                 <column name="idventa" not-null="true" /> -->
+<!--             </key> -->
+<!--             <one-to-many class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Serviciosventa" /> -->
+<!--         </set> -->
     </class>
 </hibernate-mapping>

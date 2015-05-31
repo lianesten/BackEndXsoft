@@ -11,8 +11,22 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
+/**
+ *Clase en la cual se codifican los metodo que permiten hacer operaciones sobre la tabla 
+ *Cliente en la Base de Datos
+ * @author Equipo de desarrollo Xsoft
+ *
+ */
 public class ClienteDAOImp extends HibernateDaoSupport  implements ClienteDAO {
+	
+	public ClienteDAOImp() {
+	}
 
+	/**
+	 * Metodo que se utiliza para almacenar un Cliente en la Base de datos
+	 * @param cliente
+	 * @throws DataBaseException
+	 */
 	@Override
 	public void guardarCliente(Cliente cliente) throws DataBaseException {
 		Session session = null;
@@ -27,23 +41,15 @@ public class ClienteDAOImp extends HibernateDaoSupport  implements ClienteDAO {
 			
 		/*catch para caturar algun posible Error*/	
 		}catch(HibernateException e){
-			log.error("Error guardando Cliente"+ e);
-			System.out.println("Error Guardando Cliente"+ e.toString());
+			log.error("Error guardando Cliente"+ e.toString());
 			e.printStackTrace();
 			throw new DataBaseException(e, "Error almacenando un Cliente en la BD");
 			
 		}catch(Exception e){
-			System.out.println("Errro en el ClienteDAOImp");
+			log.error("Error guardando Cliente"+ e.toString());
 			e.printStackTrace();
-			log.error("Error guardando Cliente"+ e);
-		}finally{
-			/*Cerramos la sesion creada*/
-//			 if (session!=null) {
-//					session.close(); 	
-//			}
-		
-		}
-		
+			throw new DataBaseException(e, "Error almacenando un Cliente en la BD");
+		}	
 		
 	}
 	
@@ -54,8 +60,9 @@ public class ClienteDAOImp extends HibernateDaoSupport  implements ClienteDAO {
 	 */
 	@Override
 	public Cliente obtenerCliente(String identificacion) throws DataBaseException {
-
+		System.out.println("LLega al metodo obtenerCliente");
 		Session session = null;
+		Logger  log = Logger.getLogger(this.getClass());
 		try{
 			
 			Cliente cliente = null;
@@ -72,13 +79,15 @@ public class ClienteDAOImp extends HibernateDaoSupport  implements ClienteDAO {
 			
 		/*catch para caturar algun posible Error*/	
 		}catch(HibernateException e){
+			e.printStackTrace();
+			log.error("Error en HibernateException: " + e.getMessage() );
 			throw new DataBaseException(e);
 			
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
+		}catch(Exception e){
+			System.out.println("Entra por el Exception general");
+			log.error("Entra por el Exception general ClienteDAOImp: " + e.getMessage());
+			e.printStackTrace();
+			throw new DataBaseException(e,"Error general que se presenta en el ClienteDaoImp, metodo obtener Cliente");
 		}	 
 	}
 

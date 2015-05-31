@@ -2,12 +2,16 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.dto;
 
 import java.util.Date;
 
-
+/**
+ *  Clase DTO que contiene los atributos de la tabla ServiciosVenta
+ * @author Equipo de desarrollo Xsoft
+ *
+ */
 public class Serviciosventa  implements java.io.Serializable {
 
 
     private ServicioVentaId id;
-    private Servicios servicios;
+    private Servicio servicio;
     private Venta venta;
     private double totalventa;
     private Date fechaCaducidad;
@@ -17,66 +21,72 @@ public class Serviciosventa  implements java.io.Serializable {
    public Serviciosventa() {
    }
 
-   public Serviciosventa(ServicioVentaId id, Servicios servicios, Venta venta, double totalventa, Date fechaCaducidad, int cantidad, Date fechaVenta) {
+   public Serviciosventa(ServicioVentaId id, Servicio servicio, Venta venta, double totalventa, Date fechaCaducidad, int cantidad, Date fechaVenta) {
       this.id = id;
-      this.servicios = servicios;
+      this.servicio = servicio;
       this.venta = venta;
       this.totalventa = totalventa;
       this.fechaCaducidad = fechaCaducidad;
       this.cantidad = cantidad;
       this.fechaVenta = fechaVenta;
    }
-  
-   public ServicioVentaId getId() {
-       return this.id;
-   }
-   
-   public void setId(ServicioVentaId id) {
-       this.id = id;
-   }
-   public Servicios getServicios() {
-       return this.servicios;
-   }
-   
-   public void setServicios(Servicios servicios) {
-       this.servicios = servicios;
-   }
-   public Venta getVenta() {
-       return this.venta;
-   }
-   
-   public void setVenta(Venta venta) {
-       this.venta = venta;
-   }
-   public double getTotalventa() {
-       return this.totalventa;
-   }
-   
-   public void setTotalventa(double totalventa) {
-       this.totalventa = totalventa;
-   }
-   public Date getFechaCaducidad() {
-       return this.fechaCaducidad;
-   }
-   
-   public void setFechaCaducidad(Date fechaCaducidad) {
-       this.fechaCaducidad = fechaCaducidad;
-   }
-   public int getCantidad() {
-       return this.cantidad;
-   }
-   
-   public void setCantidad(int cantidad) {
-       this.cantidad = cantidad;
-   }
-   public Date getFechaVenta() {
-       return this.fechaVenta;
-   }
-   
-   public void setFechaVenta(Date fechaVenta) {
-       this.fechaVenta = fechaVenta;
-   }
 
+public ServicioVentaId getId() {
+	return id;
+}
+
+public void setId(ServicioVentaId id) {
+	this.id = id;
+}
+
+public Servicio getServicio() {
+	return servicio;
+}
+
+public void setServicio(Servicio servicio) {
+	this.servicio = servicio;
+}
+
+public Venta getVenta() {
+	return venta;
+}
+
+public void setVenta(Venta venta) {
+	this.venta = venta;
+}
+
+public double getTotalventa() {
+	return totalventa;
+}
+
+public void setTotalventa(double totalventa) {
+	this.totalventa = totalventa;
+}
+
+public Date getFechaCaducidad() {
+	return fechaCaducidad;
+}
+
+public void setFechaCaducidad(Date fechaCaducidad) {
+	this.fechaCaducidad = fechaCaducidad;
+}
+
+public int getCantidad() {
+	return cantidad;
+}
+
+public void setCantidad(int cantidad) {
+	this.cantidad = cantidad;
+}
+
+public Date getFechaVenta() {
+	return fechaVenta;
+}
+
+public void setFechaVenta(Date fechaVenta) {
+	this.fechaVenta = fechaVenta;
+}
+  
 
 
 

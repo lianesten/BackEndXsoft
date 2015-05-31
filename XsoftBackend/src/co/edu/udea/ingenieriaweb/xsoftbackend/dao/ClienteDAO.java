@@ -11,7 +11,17 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
  *
  */
 public interface ClienteDAO {
-	
+	/**
+	 * Metodo para alamcenar un Cliente en la DB
+	 * @param cliente
+	 * @throws DataBaseException
+	 */
 	public void guardarCliente(Cliente cliente) throws DataBaseException;
+	/**
+	 * Metodo para obtener un cliente con el Id
+	 * @param identificacion
+	 * @return
+	 * @throws DataBaseException
+	 */
 	public Cliente obtenerCliente(String identificacion)  throws DataBaseException;
 }

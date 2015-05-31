@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2015 a las 22:56:37
+-- Tiempo de generación: 31-05-2015 a las 05:48:06
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.19
 
@@ -47,7 +47,9 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 --
 
 INSERT INTO `cliente` (`nombres`, `apellidos`, `numeroId`, `telefonoFijo`, `telefonoMovil`, `email`, `direccion`, `usuarioCrea`, `fechaCreacion`) VALUES
-('Pablo Andres', 'Diaz ', '120365485', '125478', '3210214587', 'pandigo@gmail.com', 'calle 89#97-94', '1038481420', '2015-05-30');
+('Pablo Andres', 'Diaz ', '120365485', '125478', '3210214587', 'pandigo@gmail.com', 'calle 89#97-94', '1038481420', '2015-05-30'),
+('mario', 'Rojas', '410', '123521459', '47856954', 'Mario@gmail.com', 'calle94 /45', '1038481420', '2015-05-30'),
+('Juan ', 'Restrepo', '47885', '42566', '3142563214', 'pandres@gmail.com', 'Sur de Medellin', '1038481420', '2015-05-30');
 
 -- --------------------------------------------------------
 
@@ -150,8 +152,8 @@ ALTER TABLE `serviciosventa`
 -- Filtros para la tabla `venta`
 --
 ALTER TABLE `venta`
-  ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`numeroId`),
-  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`numeroId`);
+  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`numeroId`),
+  ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`numeroId`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

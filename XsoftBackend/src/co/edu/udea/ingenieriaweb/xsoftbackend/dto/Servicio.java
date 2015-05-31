@@ -6,8 +6,12 @@ import java.util.Set;
 
 
 
-
-public class Servicios  implements java.io.Serializable {
+/**
+ * Clase DTO que contiene los atributos de la tabla Servicio
+ * @author Equipo de Desarrollo Xsoft
+ *
+ */
+public class Servicio  implements java.io.Serializable {
 
 
      private Integer id;
@@ -16,17 +20,17 @@ public class Servicios  implements java.io.Serializable {
      private double valor;
      private Set serviciosventas = new HashSet(0);
 
-    public Servicios() {
+    public Servicio() {
     }
 
 	
-    public Servicios(String nombre, String descripcion, double valor) {
+    public Servicio(String nombre, String descripcion, double valor) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.valor = valor;
     }
     
-    public Servicios(String nombre, String descripcion, double valor, Set serviciosventas) {
+    public Servicio(String nombre, String descripcion, double valor, Set serviciosventas) {
        this.nombre = nombre;
        this.descripcion = descripcion;
        this.valor = valor;

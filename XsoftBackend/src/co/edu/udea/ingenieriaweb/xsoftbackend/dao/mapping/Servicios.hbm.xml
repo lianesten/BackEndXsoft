@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 28/05/2015 11:07:24 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicios" table="servicios" >
+    <class name="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicio" table="servicios" >
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
@@ -18,11 +18,11 @@
             <column name="valor"  />
         </property>
         
-         <set name="serviciosventas" table="serviciosventa" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="idservicio" not-null="true" />
-            </key>
-            <one-to-many class="mapping.Serviciosventa" />
-        </set>
+<!--          <set name="serviciosventas" table="serviciosventa" inverse="true" lazy="true" fetch="select"> -->
+<!--             <key> -->
+<!--                 <column name="idservicio" not-null="true" /> -->
+<!--             </key> -->
+<!--             <one-to-many class="mapping.Serviciosventa" /> -->
+<!--         </set> -->
     </class>
 </hibernate-mapping>

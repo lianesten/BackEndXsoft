@@ -27,17 +27,17 @@
             <column name="email" />
         </property>
         
-        <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="usuarioCrea" length="20" not-null="true" />
-            </key>
-            <one-to-many class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente" />
-        </set>
-        <set name="ventas" table="venta" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="idUsuario" length="20" not-null="true" />
-            </key>
-            <one-to-many class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta" />
-        </set>
+<!--         <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select"> -->
+<!--             <key> -->
+<!--                 <column name="usuarioCrea" length="20" not-null="true" /> -->
+<!--             </key> -->
+<!--             <one-to-many class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente" /> -->
+<!--         </set> -->
+<!--         <set name="ventas" table="venta" inverse="true" lazy="true" fetch="select"> -->
+<!--             <key> -->
+<!--                 <column name="idUsuario" length="20" not-null="true" /> -->
+<!--             </key> -->
+<!--             <one-to-many class="co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta" /> -->
+<!--         </set> -->
     </class>
 </hibernate-mapping>

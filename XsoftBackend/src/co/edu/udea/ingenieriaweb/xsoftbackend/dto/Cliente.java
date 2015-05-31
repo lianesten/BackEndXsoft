@@ -1,8 +1,6 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.dto;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 
 
@@ -23,7 +21,6 @@ public class Cliente  implements java.io.Serializable {
     private String email;
     private String direccion;
     private Date fechaCreacion;
-    private Set ventas = new HashSet(0);
      
 
      /**
@@ -53,31 +50,18 @@ public class Cliente  implements java.io.Serializable {
        this.direccion = direccion;
     }
     
-    public Cliente(String numeroId, Usuario usuario, String nombres, String apellidos, String telefonoFijo, String telefonoMovil, String email, String direccion, Date fechaCreacion, Set ventas) {
-        this.numeroId = numeroId;
-        this.usuarioCrea = usuario;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.telefonoFijo = telefonoFijo;
-        this.telefonoMovil = telefonoMovil;
-        this.email = email;
-        this.direccion = direccion;
-        this.fechaCreacion = fechaCreacion;
-        this.ventas = ventas;
-     }
-   
     /**
      * Metodo que permite obtener el id de un cliente
      * @return id
      */
-    public String getId() {
+    public String getNumeroId() {
         return this.numeroId;
     }
     /**
      * Metodo que permite ingresar el id de un Cliente
      * @param id
      */
-    public void setId(String id) {
+    public void setNumeroId(String id) {
         this.numeroId = id;
     }
     
@@ -181,24 +165,6 @@ public class Cliente  implements java.io.Serializable {
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-
-	public String getNumeroId() {
-		return numeroId;
-	}
-
-	public void setNumeroId(String numeroId) {
-		this.numeroId = numeroId;
-	}
-
-	public Set getVentas() {
-		return ventas;
-	}
-
-	public void setVentas(Set ventas) {
-		this.ventas = ventas;
-	}
-
-    
 
 
 
