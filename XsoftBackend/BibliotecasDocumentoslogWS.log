@@ -1,0 +1,152 @@
+20150531183534 INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader [loadBeanDefinitions] (315) - Loading XML bean definitions from class path resource [ConfigurationSpring.xml]
+20150531183534 INFO org.springframework.context.support.GenericApplicationContext [prepareRefresh] (510) - Refreshing org.springframework.context.support.GenericApplicationContext@ba2a48: startup date [Sun May 31 18:35:34 COT 2015]; root of context hierarchy
+20150531183534 INFO org.springframework.beans.factory.support.DefaultListableBeanFactory [preInstantiateSingletons] (577) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d2fa64: defining beans [dataSource,sessionFactory,transactionManager,clienteDAO,clienteBL,usuarioDAO,usuarioBL,ventaDAO,ventaBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+20150531183534 INFO org.springframework.jdbc.datasource.DriverManagerDataSource [setDriverClassName] (153) - Loaded JDBC driver: com.mysql.jdbc.Driver
+20150531183534 INFO org.hibernate.annotations.common.Version [<clinit>] (37) - Hibernate Commons Annotations 3.2.0.Final
+20150531183534 INFO org.hibernate.cfg.Environment [<clinit>] (603) - Hibernate 3.6.10.Final
+20150531183534 INFO org.hibernate.cfg.Environment [<clinit>] (636) - hibernate.properties not found
+20150531183534 INFO org.hibernate.cfg.Environment [buildBytecodeProvider] (814) - Bytecode provider name : javassist
+20150531183534 INFO org.hibernate.cfg.Environment [<clinit>] (695) - using JDK 1.4 java.sql.Timestamp handling
+20150531183535 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente -> cliente
+20150531183535 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicio -> servicios
+20150531183535 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Serviciosventa -> serviciosventa
+20150531183535 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario -> usuario
+20150531183535 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta -> venta
+20150531183535 INFO org.hibernate.cfg.Configuration [applyHibernateValidatorLegacyConstraintsOnDDL] (1676) - Hibernate Validator not found: ignoring
+20150531183535 INFO org.springframework.orm.hibernate3.LocalSessionFactoryBean [buildSessionFactory] (780) - Building new Hibernate SessionFactory
+20150531183535 INFO org.hibernate.cfg.search.HibernateSearchEventListenerRegister [enableHibernateSearch] (75) - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+20150531183535 WARN org.hibernate.mapping.RootClass [checkCompositeIdentifier] (253) - composite-id class does not override equals(): co.edu.udea.ingenieriaweb.xsoftbackend.dto.ServicioVentaId
+20150531183535 WARN org.hibernate.mapping.RootClass [checkCompositeIdentifier] (258) - composite-id class does not override hashCode(): co.edu.udea.ingenieriaweb.xsoftbackend.dto.ServicioVentaId
+20150531183535 INFO org.hibernate.connection.ConnectionProviderFactory [initializeConnectionProviderFromConfig] (173) - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+20150531183535 INFO org.hibernate.dialect.Dialect [<init>] (136) - Using dialect: org.hibernate.dialect.MySQLDialect
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (126) - Database ->
+       name : MySQL
+    version : 5.5.32
+      major : 5
+      minor : 5
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (132) - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+20150531183535 INFO org.hibernate.transaction.TransactionFactoryFactory [buildTransactionFactory] (65) - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+20150531183535 INFO org.hibernate.transaction.TransactionManagerLookupFactory [getTransactionManagerLookup] (83) - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (179) - Automatic flush during beforeCompletion(): disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (183) - Automatic session close at end of transaction: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (190) - JDBC batch size: 15
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (193) - JDBC batch updates for versioned data: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (198) - Scrollable result sets: enabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (206) - JDBC3 getGeneratedKeys(): enabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (214) - Connection release mode: auto
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (238) - Maximum outer join fetch depth: 2
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (241) - Default batch fetch size: 1
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (245) - Generate SQL with comments: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (249) - Order SQL updates by primary key: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (253) - Order SQL inserts for batching: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [createQueryTranslatorFactory] (431) - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+20150531183535 INFO org.hibernate.hql.ast.ASTQueryTranslatorFactory [<init>] (47) - Using ASTQueryTranslatorFactory
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (261) - Query language substitutions: {}
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (266) - JPA-QL strict compliance: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (271) - Second-level cache: enabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (275) - Query cache: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [createRegionFactory] (406) - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (285) - Optimize cache for minimal puts: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (294) - Structured second-level cache entries: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (314) - Echoing all SQL to stdout
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (323) - Statistics: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (327) - Deleted entity synthetic identifier rollback: disabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (343) - Default entity-mode: pojo
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (347) - Named query checking : enabled
+20150531183535 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (351) - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+20150531183535 INFO org.hibernate.impl.SessionFactoryImpl [<init>] (202) - building session factory
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@1cb6996
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@7e3f6
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [clob] overrides previous : org.hibernate.type.ClobType@d3575
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@d3575
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@11da57d
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [blob] overrides previous : org.hibernate.type.BlobType@194fad1
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@194fad1
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@abb146
+20150531183535 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@12c8e7b
+20150531183536 INFO org.hibernate.impl.SessionFactoryObjectFactory [addInstance] (105) - Not binding factory to JNDI, no JNDI name configured
+20150531183536 INFO co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp.UsuarioDAOImpTest [testObtenerUsuario] (50) - Nombre Usuario: Joaquin 
+20150531183536 INFO org.springframework.context.support.GenericApplicationContext [doClose] (1042) - Closing org.springframework.context.support.GenericApplicationContext@ba2a48: startup date [Sun May 31 18:35:34 COT 2015]; root of context hierarchy
+20150531183536 INFO org.springframework.beans.factory.support.DefaultListableBeanFactory [destroySingletons] (434) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d2fa64: defining beans [dataSource,sessionFactory,transactionManager,clienteDAO,clienteBL,usuarioDAO,usuarioBL,ventaDAO,ventaBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+20150531183536 INFO org.springframework.orm.hibernate3.LocalSessionFactoryBean [destroy] (223) - Closing Hibernate SessionFactory
+20150531183536 INFO org.hibernate.impl.SessionFactoryImpl [close] (927) - closing
+20150531184219 INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader [loadBeanDefinitions] (315) - Loading XML bean definitions from class path resource [ConfigurationSpring.xml]
+20150531184220 INFO org.springframework.context.support.GenericApplicationContext [prepareRefresh] (510) - Refreshing org.springframework.context.support.GenericApplicationContext@ba2a48: startup date [Sun May 31 18:42:20 COT 2015]; root of context hierarchy
+20150531184220 INFO org.springframework.beans.factory.support.DefaultListableBeanFactory [preInstantiateSingletons] (577) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d2fa64: defining beans [dataSource,sessionFactory,transactionManager,clienteDAO,clienteBL,usuarioDAO,usuarioBL,ventaDAO,ventaBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+20150531184220 INFO org.springframework.jdbc.datasource.DriverManagerDataSource [setDriverClassName] (153) - Loaded JDBC driver: com.mysql.jdbc.Driver
+20150531184220 INFO org.hibernate.annotations.common.Version [<clinit>] (37) - Hibernate Commons Annotations 3.2.0.Final
+20150531184220 INFO org.hibernate.cfg.Environment [<clinit>] (603) - Hibernate 3.6.10.Final
+20150531184220 INFO org.hibernate.cfg.Environment [<clinit>] (636) - hibernate.properties not found
+20150531184220 INFO org.hibernate.cfg.Environment [buildBytecodeProvider] (814) - Bytecode provider name : javassist
+20150531184220 INFO org.hibernate.cfg.Environment [<clinit>] (695) - using JDK 1.4 java.sql.Timestamp handling
+20150531184220 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente -> cliente
+20150531184220 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicio -> servicios
+20150531184220 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Serviciosventa -> serviciosventa
+20150531184220 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario -> usuario
+20150531184220 INFO org.hibernate.cfg.HbmBinder [bindRootPersistentClassCommonValues] (353) - Mapping class: co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta -> venta
+20150531184220 INFO org.hibernate.cfg.Configuration [applyHibernateValidatorLegacyConstraintsOnDDL] (1676) - Hibernate Validator not found: ignoring
+20150531184220 INFO org.springframework.orm.hibernate3.LocalSessionFactoryBean [buildSessionFactory] (780) - Building new Hibernate SessionFactory
+20150531184220 INFO org.hibernate.cfg.search.HibernateSearchEventListenerRegister [enableHibernateSearch] (75) - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+20150531184220 WARN org.hibernate.mapping.RootClass [checkCompositeIdentifier] (253) - composite-id class does not override equals(): co.edu.udea.ingenieriaweb.xsoftbackend.dto.ServicioVentaId
+20150531184220 WARN org.hibernate.mapping.RootClass [checkCompositeIdentifier] (258) - composite-id class does not override hashCode(): co.edu.udea.ingenieriaweb.xsoftbackend.dto.ServicioVentaId
+20150531184220 INFO org.hibernate.connection.ConnectionProviderFactory [initializeConnectionProviderFromConfig] (173) - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+20150531184220 INFO org.hibernate.dialect.Dialect [<init>] (136) - Using dialect: org.hibernate.dialect.MySQLDialect
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (126) - Database ->
+       name : MySQL
+    version : 5.5.32
+      major : 5
+      minor : 5
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (132) - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+20150531184221 INFO org.hibernate.transaction.TransactionFactoryFactory [buildTransactionFactory] (65) - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+20150531184221 INFO org.hibernate.transaction.TransactionManagerLookupFactory [getTransactionManagerLookup] (83) - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (179) - Automatic flush during beforeCompletion(): disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (183) - Automatic session close at end of transaction: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (190) - JDBC batch size: 15
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (193) - JDBC batch updates for versioned data: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (198) - Scrollable result sets: enabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (206) - JDBC3 getGeneratedKeys(): enabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (214) - Connection release mode: auto
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (238) - Maximum outer join fetch depth: 2
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (241) - Default batch fetch size: 1
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (245) - Generate SQL with comments: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (249) - Order SQL updates by primary key: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (253) - Order SQL inserts for batching: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [createQueryTranslatorFactory] (431) - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+20150531184221 INFO org.hibernate.hql.ast.ASTQueryTranslatorFactory [<init>] (47) - Using ASTQueryTranslatorFactory
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (261) - Query language substitutions: {}
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (266) - JPA-QL strict compliance: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (271) - Second-level cache: enabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (275) - Query cache: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [createRegionFactory] (406) - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (285) - Optimize cache for minimal puts: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (294) - Structured second-level cache entries: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (314) - Echoing all SQL to stdout
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (323) - Statistics: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (327) - Deleted entity synthetic identifier rollback: disabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (343) - Default entity-mode: pojo
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (347) - Named query checking : enabled
+20150531184221 INFO org.hibernate.cfg.SettingsFactory [buildSettings] (351) - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+20150531184221 INFO org.hibernate.impl.SessionFactoryImpl [<init>] (202) - building session factory
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@1cb6996
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@7e3f6
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [clob] overrides previous : org.hibernate.type.ClobType@d3575
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@d3575
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@11da57d
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [blob] overrides previous : org.hibernate.type.BlobType@194fad1
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@194fad1
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@abb146
+20150531184221 INFO org.hibernate.type.BasicTypeRegistry [register] (150) - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@12c8e7b
+20150531184221 INFO org.hibernate.impl.SessionFactoryObjectFactory [addInstance] (105) - Not binding factory to JNDI, no JNDI name configured
+20150531184221 INFO co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp.UsuarioDAOImpTest [testGuardarUsuario] (48) - Nombre Usuario: Kely
+20150531184221 INFO org.springframework.context.support.GenericApplicationContext [doClose] (1042) - Closing org.springframework.context.support.GenericApplicationContext@ba2a48: startup date [Sun May 31 18:42:20 COT 2015]; root of context hierarchy
+20150531184221 INFO org.springframework.beans.factory.support.DefaultListableBeanFactory [destroySingletons] (434) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@d2fa64: defining beans [dataSource,sessionFactory,transactionManager,clienteDAO,clienteBL,usuarioDAO,usuarioBL,ventaDAO,ventaBL,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+20150531184221 INFO org.springframework.orm.hibernate3.LocalSessionFactoryBean [destroy] (223) - Closing Hibernate SessionFactory
+20150531184221 INFO org.hibernate.impl.SessionFactoryImpl [close] (927) - closing

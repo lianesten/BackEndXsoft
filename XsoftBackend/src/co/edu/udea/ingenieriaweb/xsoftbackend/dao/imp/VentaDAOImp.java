@@ -39,12 +39,6 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			e.printStackTrace();
 			log.error("Error guardando Venta"+ e);
 			throw new DataBaseException(e, "Error almacenando un venta en la BD");
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
-		
 		}
 		
 	}
@@ -77,11 +71,6 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			e.printStackTrace();
 			log.error("Error obteniendo Venta"+e);
 			throw new DataBaseException(e, "Error almacenando un venta en la BD");
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
 		}
 		return venta;
 	}
@@ -105,11 +94,6 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			e.printStackTrace();
 			log.error("Error actualizando venta"+e);
 			throw new DataBaseException(e, "Error almacenando un venta en la BD");
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
 		}
 		
 	}

@@ -32,7 +32,25 @@ public class UsuarioDAOImpTest {
 
 	@Test
 	public void testGuardarUsuario() {
-		fail("Not yet implemented");
+		Usuario usuario = new Usuario();
+		usuario.setNombres("Kely");
+		usuario.setApellidos("Lezcano");
+		usuario.setNumeroId("1152690699");
+		usuario.setEmail("kely.lezcano@gmail.com");
+		usuario.setPassword("kely");
+		usuario.setUsername("kely");
+		usuario.setPrivilegio(1);
+		
+		try{
+			usuarioDAO.guardarUsuario(usuario);
+			assertTrue(usuario!=null);
+			Logger  log = Logger.getLogger(this.getClass());
+			log.info("Nombre Usuario: " + usuario.getNombres());
+		}
+		catch(DataBaseException e){
+			e.printStackTrace();
+			fail("Not yet implemented");
+		}
 	}
 
 	@Test

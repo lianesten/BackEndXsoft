@@ -103,11 +103,6 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			e.printStackTrace();
 			log.error("Error actualizando Usuario"+e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
 		}
 	}
 	
@@ -134,11 +129,6 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			e.printStackTrace();
 			log.error("Error guardando Usuario"+e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
 		}
 		
 		return listaUsuarios;
@@ -164,11 +154,6 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			e.printStackTrace();
 			log.error("Error actualizando Usuario"+e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
-		}finally{
-			/*Cerramos la sesion creada*/
-			 if (session!=null) {
-					session.close(); 	
-			}
 		}
 		
 	}
