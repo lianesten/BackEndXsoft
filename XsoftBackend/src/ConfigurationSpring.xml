@@ -64,5 +64,23 @@
 	<bean id="clienteBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.ClienteBLImp">
 		<property name="clienteDAO" ref="clienteDAO"/>
 	</bean>
+	
+	<bean id="usuarioDAO" class="co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp.UsuarioDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	
+	</bean>
+	
+	<bean id="usuarioBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.UsuarioBLImp">
+		<property name="usuarioDAO" ref="usuarioDAO"/>
+	</bean>
+	
+	<bean id="ventaDAO" class="co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp.VentaDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	
+	</bean>
+	
+	<bean id="ventaBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.VentaBLImp">
+		<property name="ventaDAO" ref="ventaDAO"/>
+	</bean>
 
 </beans>
