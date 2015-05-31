@@ -31,7 +31,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
 //@Transactional
 ///*Le decimos cual es el archivo de configuraciones del Spring*/
-@ContextConfiguration (locations ="classpath*:/ConfigurationSpring.xml")
+@ContextConfiguration (locations ="classpath:/ConfigurationSpring.xml")
 
 ///*Le decimos a Spring que en esta clase pueden haber cosas que deba inyectar*/
 @Component
