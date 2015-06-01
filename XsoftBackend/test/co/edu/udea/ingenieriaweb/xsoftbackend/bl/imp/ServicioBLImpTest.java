@@ -41,7 +41,7 @@ public class ServicioBLImpTest {
 	 * Prueba de integracion que permite validar el correcto ingreso de un
 	 * Servicio en la DB
 	 */
-	@Test
+	//@Test
 	public void testGuardarServicio() {
 		/**
 		 * Creamos el objeto de la Clase Servio
@@ -69,7 +69,7 @@ public class ServicioBLImpTest {
 	 * Prueba de integracion que se realiza para verificar que se pueda obtener
 	 * correctamente un Servicio almacenado en la DB
 	 */
-	@Test
+	//@Test
 	public void testObtenerServicio() {
 		Servicio servicio = null;
 		/**
@@ -98,7 +98,7 @@ public class ServicioBLImpTest {
 	 * @throws LogicException 
 	 * @throws DataBaseException 
 	 */
-	@Test
+	//@Test
 	public void testActualizarServicio() throws DataBaseException, LogicException {
 		/**
 		 * Obtenemos el Servicio que se desea modificar
@@ -148,7 +148,7 @@ public class ServicioBLImpTest {
 	/**
 	 * Prueba de integracion realizada para verificar que se puede eliminar un Servicio de la DB
 	 */
-	@Test
+	//@Test
 	public void testEliminarServicio() {
 		/**
 		 * Id del Servicio a eliminar

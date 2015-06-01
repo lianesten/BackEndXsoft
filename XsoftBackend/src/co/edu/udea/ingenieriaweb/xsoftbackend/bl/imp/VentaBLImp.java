@@ -15,11 +15,13 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
-/** clase que implementa todos los metodos definos en la interface venta */
+/**
+ * 
+ * @author Julian Montoya, Luis Duque
+ *
+ */
 public class VentaBLImp implements VentaBl {
 	private Venta venta;
-	private UsuarioDAO usuarioDAO = null;
-	private ClienteDAO clienteDAO = null;
 	private Usuario usuario;
 	private Cliente cliente;
 
@@ -31,6 +33,27 @@ public class VentaBLImp implements VentaBl {
 
 	public void setVentaDAO(VentaDAO ventaDAO) {
 		this.ventaDAO = ventaDAO;
+	}
+	
+	UsuarioDAO usuarioDAO ;
+	
+	public UsuarioDAO getUsuarioDAO() {
+		return usuarioDAO;
+	}
+
+	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
+		this.usuarioDAO = usuarioDAO;
+	}
+
+	ClienteDAO clienteDAO ;
+	
+
+	public ClienteDAO getClienteDAO() {
+		return clienteDAO;
+	}
+
+	public void setClienteDAO(ClienteDAO clienteDAO) {
+		this.clienteDAO = clienteDAO;
 	}
 
 	/**
@@ -65,7 +88,7 @@ public class VentaBLImp implements VentaBl {
 	}
 
 	@Override
-	public void obtenerVenta(Integer idVenta) throws DataBaseException,
+	public Venta obtenerVenta(Integer idVenta) throws DataBaseException,
 			LogicException {
 		try {
 
@@ -76,19 +99,21 @@ public class VentaBLImp implements VentaBl {
 			log.error("Error en el almacenamiento de Venta: " + e);
 
 		}
+		return venta;
 
 	}
 
 	@Override
-	public void actualizarVenta(String numeroIdCliente, String usuarioCreaId)
+	public void actualizarVenta(int idVenta,String numeroIdCliente, String usuarioCreaId)
 			throws DataBaseException, LogicException {
 
+		try {
 		usuario = usuarioDAO.obtenerUsuario(usuarioCreaId);
 		cliente = clienteDAO.obtenerCliente(numeroIdCliente);
 		venta = new Venta();
+		venta.setIdVenta(idVenta);
 		venta.setCliente(cliente);
 		venta.setUsuario(usuario);
-		try {
 			ventaDAO.actualizarVenta(venta);
 		} catch (DataBaseException e) {
 			e.printStackTrace();

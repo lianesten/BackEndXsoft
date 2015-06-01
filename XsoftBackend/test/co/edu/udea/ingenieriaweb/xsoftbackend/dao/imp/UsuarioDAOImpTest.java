@@ -104,7 +104,6 @@ public class UsuarioDAOImpTest {
 			assertTrue(usuario != null);
 		} catch (DataBaseException e) {
 			e.printStackTrace();
-			System.out.println("Problema" + e.toString());
 			fail("Not yet implemented");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -127,7 +126,6 @@ public class UsuarioDAOImpTest {
 
 		} catch (DataBaseException e) {
 			e.printStackTrace();
-			System.out.println("Problema" + e.toString());
 			fail("Not yet implemented");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -142,13 +140,12 @@ public class UsuarioDAOImpTest {
 		/**
 		 * Id del Usuario a eliminar
 		 */
-		String idClienteEliminar = "1152690699";
+		String idUsuario = "1152690699";
 		try {
-			usuarioDAO.eliminarUsuario(idClienteEliminar);
-			assertTrue(idClienteEliminar != null);
+			usuarioDAO.eliminarUsuario(idUsuario);
+			assertTrue(idUsuario != null);
 		} catch (DataBaseException e) {
 			e.printStackTrace();
-			System.out.println("Problema" + e.toString());
 			fail("Not yet implemented");
 		} catch (Exception e) {
 			e.printStackTrace();

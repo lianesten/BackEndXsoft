@@ -3,7 +3,7 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.dto;
 
 /**
  *  Clase DTO que contiene los atributos de la tabla Usuario
- * @author Equipo de Desarrollo Xsoft
+ * @author Joaquin Hernandez, Luis Zambrano
  *
  */
 public class Usuario  implements java.io.Serializable {

@@ -20,7 +20,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
  * Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
  * la tabla Cliente en la Base de Datos
  * 
- * @author Equipo de desarrollo Xsoft
+ * @author Joaquin Hernandez
  *
  */
 public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
@@ -49,14 +49,12 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 
 			/* catch para caturar algun posible Error */
 		} catch (HibernateException e) {
-			log.error("Error guardando Cliente" + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un Cliente en la BD");
 
 		} catch (Exception e) {
-			log.error("Error guardando Cliente" + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un Cliente en la BD");
 		}
@@ -90,14 +88,11 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 
 			/* catch para caturar algun posible Error */
 		} catch (HibernateException e) {
-			e.printStackTrace();
-			log.error("Error en HibernateException: " + e.getMessage());
+			log.error(e);
 			throw new DataBaseException(e);
 
 		} catch (Exception e) {
-			log.error("Entra por el Exception general ClienteDAOImp: "
-					+ e.getMessage());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error general que se presenta en el ClienteDaoImp, metodo obtener Cliente");
 		}
@@ -121,13 +116,11 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 			// session.flush();
 			tx.commit();
 		} catch (HibernateException e) {
-			log.error("Error actualizando Cliente " + e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error actualizando un Cliente en la BD");
 		} catch (Exception e) {
-			e.printStackTrace();
-			log.error("Error actualizando Usuario" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error actualizando un Cliente en la BD");
 		}
@@ -156,13 +149,11 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 			// session.flush();
 			tx.commit();
 		} catch (HibernateException e) {
-			log.error("Error eliminando Cliente " + e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error eliminando un Cliente en la BD");
 		} catch (Exception e) {
-			e.printStackTrace();
-			log.error("Error actualizando Usuario" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error eliminando un Cliente en la BD");
 		}
@@ -191,14 +182,12 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 			listaClientes = criteria.list();
 
 		} catch (HibernateException e) {
-			log.error("Error obteniendo una lista de  Cliente " + e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error obteniendo la lista de clientes en la DB");
 		} catch (Exception e) {
 			System.out.println("Error en el ClienteDAOImp");
-			e.printStackTrace();
-			log.error("Error obteniendo lista de clientes " + e.toString());
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error obteniendo la lista de clientes en la DB");
 		}

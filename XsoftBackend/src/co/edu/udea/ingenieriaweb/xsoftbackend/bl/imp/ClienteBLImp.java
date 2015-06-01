@@ -20,7 +20,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
  * Clase que contiene la logica del negocio para realizar operaciones con la
  * tabla Clientes en la Base de datos
  * 
- * @author Equipo Desarrollo Xsoft
+ * @author Joaquin Hernandez
  *
  */
 public class ClienteBLImp implements ClienteBl {

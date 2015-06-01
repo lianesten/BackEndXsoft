@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  *  Clase DTO que contiene los atributos de la tabla ServiciosVenta
- * @author Equipo de desarrollo Xsoft
+ * @author Joaquin Hernandez, Luis Zambrano
  *
  */
 public class Serviciosventa  implements java.io.Serializable {

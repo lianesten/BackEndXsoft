@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  * clase DTO que contiene los atributos de la tabla Venta
- * @author JoaquinD
+ * @author Joaquin Hernandez, Luis Zambrano
  *
  */
 public class Venta  implements java.io.Serializable {

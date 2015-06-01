@@ -63,7 +63,7 @@ public class ClienteBLImpTest {
 		cliente.setDireccion("Norte de Medellin");
 		cliente.setEmail("pandres@gmail.com");
 		cliente.setFechaCreacion(new Date());
-		cliente.setNumeroId("1236");
+		cliente.setNumeroId("496");
 		cliente.setTelefonoFijo("42566");
 		cliente.setTelefonoMovil("3142563214");
 		cliente.setUsuarioCrea(usuarioCrea);

@@ -10,11 +10,12 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.bl.SessionBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.seguridad.Autenticator;
 
 /**
  * Clase que permite controlar las sesiones de los usuarios en el sistema
- * @author Equipo de desarrollo Xsoft
+ * @author Joaquin Hernandez
  *
  */
 public class SessionBLImp implements SessionBl {
@@ -45,7 +46,7 @@ public class SessionBLImp implements SessionBl {
 	 * @return Token   
 	 */
 	@Override
-	public String autenticar(String username, String password) {
+	public String autenticar(String username, String password) throws LogicException, DataBaseException {
 		
 		 Usuario usuario = new Usuario();
 	        
@@ -56,9 +57,18 @@ public class SessionBLImp implements SessionBl {
 	        } catch (Exception e) {
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	e.printStackTrace();
-				log.error("Error obteniendo el usuario por medio de su Username"+ e.toString());
-				new DataBaseException(e, "Error obteniendo usuario por Usernaname");
+				log.error("El usuario no existe en la base de datos"+ e.toString());
+				new LogicException(e, "El usuario o la contraseña ingresados no son validos");
 	        }
+	        /**
+	         * Verificamos la contraseña coincide
+	         */
+	        if(usuario.getPassword()!=password){
+	        	Logger log = Logger.getLogger(this.getClass());
+	        	log.error("Contraseña  incorrecta");
+				new LogicException("El usuario o la contraseña ingresados no son validos");
+	        }
+	        
 	        /**
 	         * Le pasamos los parametros que queremos setear en el TOKEN
 	         */
@@ -109,7 +119,7 @@ public class SessionBLImp implements SessionBl {
 				Logger log = Logger.getLogger(this.getClass());
 	        	e.printStackTrace();
 				log.error("Error obteniendo el usuario por medio de su Username"+ e.toString());
-				new DataBaseException(e, "Error obteniendo usuario por Usernaname");
+				new DataBaseException(e, "El usuario o la contraseña no son validos");
 			}
 		return token;
 	}

@@ -7,7 +7,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 /**
  * Interface que contiene la logica del negocio que se va  aimplemenar sobre la tabla Usuario
- * @author Xsoft developers Team
+ * @author Julian Montoya, Luis Duque
  *
  */
 
@@ -32,7 +32,7 @@ public interface UsuarioBl {
 	/**
 	 * Metodo para obtener un usuario de la tabla usuarios dado su id y registrado previamente en la base de datos
 	 * @param numeroId
-	 * @return
+	 * @return Usuario
 	 * @throws DataBaseException
 	 * @throws LogicException
 	 */

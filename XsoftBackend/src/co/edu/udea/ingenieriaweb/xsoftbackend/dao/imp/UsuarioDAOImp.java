@@ -17,12 +17,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+
 /**
- * Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
+ * * Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
  * la tabla Usuario en la Base de Datos
- * 
- * @author Equipo de desarrollo Xsoft
- *
+ * @author Julian Montoya, Luis Duque, Joaquin Hernandez
  */
 public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	private Session session = null;
@@ -45,13 +44,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			session.flush();
 			tx.commit();
 		}catch(HibernateException e){
-			log.error("Error guardando usuario "+e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
 		}catch(Exception e){
-			System.out.println("Error en el UsuarioImp");
-			e.printStackTrace();
-			log.error("Error guardando Usuario"+e.getMessage());
+			log.error(e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
 		}
 	}
@@ -81,12 +77,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			
 			
 		}catch(HibernateException e){
-			e.printStackTrace();
-			log.error("Error obteniendo Usuario"+e.toString());
+			log.error(e);
 			throw new DataBaseException(e, "Error obtendiendo un Usuario en la BD");
 		}catch(Exception e){
-			e.printStackTrace();
-			log.error("Error obteniendo Usuario"+e.toString());
+			log.error(e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
 		}
 		
@@ -113,12 +107,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			//session.flush();
 			tx.commit();
 		}catch(HibernateException e){
-			log.error("Error actualizando usuario "+e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e, "Error actualizando un Usuario en la BD");
 		}catch(Exception e){
-			e.printStackTrace();
-			log.error("Error actualizando Usuario"+e);
+			log.error(e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
 		}
 	}
@@ -144,14 +136,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			listaUsuarios = criteria.list();
 			
 		}catch(HibernateException e){
-			log.error("Error obteniendo una lista de  usuario "+e);
-			System.out.println("Error guardando Cliente "+e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e, "Error obteniendo la lista de usuarios en la DB");
 		}catch(Exception e){
-			System.out.println("Error en el UsuarioImp");
-			e.printStackTrace();
-			log.error("Error guardando Usuario"+e);
+			log.error(e);
 			throw new DataBaseException(e, "Error obteniendo la lista de usuarios en la DB");
 		}
 		
@@ -175,12 +163,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			//session.flush();
 			tx.commit();
 		}catch(HibernateException e){
-			log.error("Error guardando usuario "+e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e, "Error eliminando usuario");
 		}catch(Exception e){
-			e.printStackTrace();
-			log.error("Error actualizando Usuario"+e);
+			log.error(e);
 			throw new DataBaseException(e, "Error eliminando usuario");
 		}
 		
@@ -214,12 +200,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			
 			
 		}catch(HibernateException e){
-			e.printStackTrace();
-			log.error("Error obteniendo Usuario"+e.toString());
+			log.error(e);
 			throw new DataBaseException(e, "Error obtendiendo un Usuario en la BD");
 		}catch(Exception e){
-			e.printStackTrace();
-			log.error("Error obteniendo Usuario"+e.toString());
+			log.error(e);
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
 		}
 		

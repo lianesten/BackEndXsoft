@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * 
- * @author Equipo Desarrollo Xsoft
+ * @author Joaquin Hernandez, Luis Zambrano
  * DTO de la tabla Cliente en la Base de datos
  */
 public class Cliente  implements java.io.Serializable {

@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  * Clase DTO que contiene los atributos de la tabla Servicio
- * @author Equipo de Desarrollo Xsoft
+ * @author Joaquin Hernandez, Luis Zambrano
  *
  */
 public class Servicio  implements java.io.Serializable {
