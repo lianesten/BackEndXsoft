@@ -24,8 +24,8 @@ public interface VentaBl {
 	 * @throws LogicException
 	 */
 	public void GuardarVenta(String numeroIdCliente, String usuarioCreaId ) throws DataBaseException, LogicException;
-	public void obtenerVenta(Integer idVenta) throws DataBaseException, LogicException;
-	public void actualizarVenta(String numeroIdCliente, String usuarioCreaId) throws DataBaseException, LogicException;
+	public Venta obtenerVenta(Integer idVenta) throws DataBaseException, LogicException;
+	public void actualizarVenta(int idVenta, String numeroIdCliente, String usuarioCreaId) throws DataBaseException, LogicException;
 	public List<Venta> obtenerVentas() throws DataBaseException;
 	
 }

@@ -81,6 +81,8 @@
 	
 	<bean id="ventaBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.VentaBLImp">
 		<property name="ventaDAO" ref="ventaDAO"/>
+		<property name="usuarioDAO" ref="usuarioDAO"/>
+		<property name="clienteDAO" ref="clienteDAO"/>
 	</bean>
 	
 	<bean id="sessionBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.SessionBLImp">
