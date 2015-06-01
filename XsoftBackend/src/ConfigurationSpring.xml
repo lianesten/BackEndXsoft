@@ -86,5 +86,14 @@
 	<bean id="sessionBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.SessionBLImp">
 		<property name="usuarioDAO" ref="usuarioDAO"/>
 	</bean>
+	
+	<bean id="servicioDAO" class="co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp.ServicioDAOImp">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	
+	</bean>
+	
+	<bean id="ServicioBL" class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.ServicioBLImp">
+		<property name="servicioDAO" ref="servicioDAO"/>
+	</bean>
 
 </beans>

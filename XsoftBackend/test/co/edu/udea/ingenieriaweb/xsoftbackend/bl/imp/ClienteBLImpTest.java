@@ -19,12 +19,6 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
-/**
- * 
- * @author Equipo de Desarrollo Xsoft
- *
- */
-
 // /*Le especificamos que correremos la prueba con el Junit de Spring*/
 @RunWith(SpringJUnit4ClassRunner.class)
 // @Transactional
@@ -101,7 +95,6 @@ public class ClienteBLImpTest {
 		try {
 				cliente = clienteBl.obtenerCliente(identificacion); 
 		
-			System.out.println("Cliente: " + cliente);
 			assertTrue(cliente.getNumeroId().equals("120365485"));
 			Logger log = Logger.getLogger(this.getClass());
 			log.info("Nombre Cliente: " + cliente.getNombres());
@@ -126,7 +119,6 @@ public class ClienteBLImpTest {
 		 * Obtenemos el cliente que se desea modificar
 		 */
 		Cliente cliente = clienteBl.obtenerCliente("47885");
-		System.out.println("Nombre cliente Obtenido: " + cliente.getNombres() );
 
 		/**
 		 * Es necesario definir un objeto de la Clase Usuario para indicar quien
@@ -169,7 +161,6 @@ public class ClienteBLImpTest {
 
 		} catch (DataBaseException e) {
 			e.printStackTrace();
-			System.out.println("Problema" + e.toString());
 			fail("Not yet implemented");
 		} catch (Exception e) {
 			e.printStackTrace();
