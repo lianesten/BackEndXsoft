@@ -1,7 +1,6 @@
-package co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp;
+package co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp;
 
 import static org.junit.Assert.*;
-
 
 import java.util.Date;
 import java.util.List;
@@ -14,10 +13,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import co.edu.udea.ingenieriaweb.xsoftbackend.dao.ClienteDAO;
+import co.edu.udea.ingenieriaweb.xsoftbackend.bl.ClienteBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
 /**
  * 
@@ -33,45 +33,22 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 // /*Le decimos a Spring que en esta clase pueden haber cosas que deba
 // inyectar*/
 @Component
-public class ClienteDAOImpTest {
-
-	/* Inyectamos Un objeto de la clase ClienteDAO */
+/**
+ * Clese que contiene las pruebas de integracion del a logica del negocio de la tabla Cliente
+ * @author Equipo de desarrollo Xsoft
+ *
+ */
+public class ClienteBLImpTest {
 
 	@Autowired
-	ClienteDAO clienteDAO;
+	ClienteBl clienteBl;
 
 	/**
-	 * Prueba de integracion para obtener un Cliente desde la DB utilizando
-	 * directamente un objeto ClienteDAO
-	 */
-	@Test
-	public void testObtenerCliente() {
-		Cliente cliente = null;
-		/**
-		 * Identificacion del Uusario en la base de datos con nombre Pablo
-		 * Andres
-		 */
-		String identificacion = "120365485";
-		try {
-			cliente = clienteDAO.obtenerCliente(identificacion);
-			System.out.println("Cliente: " + cliente);
-			assertTrue(cliente.getNumeroId().equals("120365485"));
-			Logger log = Logger.getLogger(this.getClass());
-			log.info("Nombre Cliente: " + cliente.getNombres());
-		} catch (DataBaseException e) {
-			e.printStackTrace();
-			fail("Not yet implemented");
-		}
-	}
-
-	/**
-	 * 
-	 * prueba de integración para ingresar un Cliente en la DB
-	 * 
+	 * Prueba de integracion que permite validar el correcto ingreso de un
+	 * cliente
 	 */
 	@Test
 	public void testGuardarCliente() {
-
 		/**
 		 * Creamos el objeto de la clase Cliente
 		 */
@@ -87,39 +64,69 @@ public class ClienteDAOImpTest {
 		/**
 		 * Llenamos los datos del Cliente
 		 */
-		cliente.setNombres("Juan ");
-		cliente.setApellidos("Restrepo");
-		cliente.setDireccion("Sur de Medellin");
+		cliente.setNombres("Julian ");
+		cliente.setApellidos("Marin");
+		cliente.setDireccion("Norte de Medellin");
 		cliente.setEmail("pandres@gmail.com");
 		cliente.setFechaCreacion(new Date());
-		cliente.setNumeroId("47885");
+		cliente.setNumeroId("1236");
 		cliente.setTelefonoFijo("42566");
 		cliente.setTelefonoMovil("3142563214");
 		cliente.setUsuarioCrea(usuarioCrea);
 
 		try {
-			clienteDAO.guardarCliente(cliente);
+			clienteBl.GuardarCliente(cliente.getNumeroId(),
+					cliente.getNombres(), cliente.getApellidos(),
+					cliente.getTelefonoFijo(), cliente.getTelefonoMovil(),
+					cliente.getEmail(), cliente.getDireccion(),
+					cliente.getUsuarioCrea());
 			assertTrue(cliente != null);
-		} catch (DataBaseException e) {
-			e.printStackTrace();
-			fail("Not yet implemented");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**
-	 * Prueba realizada para verificar que un cliente se modifique correctamente
-	 * 
-	 * @throws DataBaseException
+	 * Prueba realizada para garantizar que un usuario se puede obtener
+	 * ocrrectamente desde la DB
 	 */
 	@Test
-	public void actualizarCliente() throws DataBaseException {
+	public void testObtenerCliente() {
+		Cliente cliente = null;
+		/**
+		 * Identificacion del Usuario en la base de datos con nombre Pablo
+		 * Andres
+		 */
+		String identificacion = "120365485";
+		try {
+				cliente = clienteBl.obtenerCliente(identificacion); 
+		
+			System.out.println("Cliente: " + cliente);
+			assertTrue(cliente.getNumeroId().equals("120365485"));
+			Logger log = Logger.getLogger(this.getClass());
+			log.info("Nombre Cliente: " + cliente.getNombres());
+		} catch (DataBaseException e) {
+			e.printStackTrace();
+		}
+		catch (LogicException e) {
+			Logger log = Logger.getLogger(this.getClass());
+			log.error("Error de Logica de negocio"+ e.toString());
+		}
+	}		
+
+	/**
+	 * Prueba realizada para verificar que un cliente se modifique correctamente
+	 * @throws LogicException 
+	 * @throws DataBaseException 
+	 * 
+	 */
+	@Test
+	public void testActualizarCliente() throws DataBaseException, LogicException {
 		/**
 		 * Obtenemos el cliente que se desea modificar
 		 */
-		Cliente cliente = clienteDAO.obtenerCliente("1236");
+		Cliente cliente = clienteBl.obtenerCliente("47885");
+		System.out.println("Nombre cliente Obtenido: " + cliente.getNombres() );
 
 		/**
 		 * Es necesario definir un objeto de la Clase Usuario para indicar quien
@@ -133,10 +140,10 @@ public class ClienteDAOImpTest {
 		 * identificacion
 		 */
 		cliente.setNombres("Andres");
-		cliente.setApellidos("Mercado");
+		cliente.setApellidos("Hernandez");
 
 		try {
-			clienteDAO.actualizarCliente(cliente);
+			clienteBl.actualizarCliente(cliente);
 			assertTrue(cliente != null);
 		} catch (DataBaseException e) {
 			e.printStackTrace();
@@ -148,18 +155,18 @@ public class ClienteDAOImpTest {
 	}
 
 	/**
-	 * Test realizado para verificar que se puedeeliminar correctamente un
-	 * Cliente en la DB
+	 * Prueba realiza para comprobar la logica del negocio para obtener todos los clientes de la DB
 	 */
 	@Test
-	public void eliminarCliente() {
-		/**
-		 * Id del cliente a eliminar
-		 */
-		String idClienteEliminar = "47885";
+	public void testObenerClientes() {
+		List clientes = null;
+		Logger log = Logger.getLogger(this.getClass());
 		try {
-			clienteDAO.eliminarCliente(idClienteEliminar);
-			assertTrue(idClienteEliminar != null);
+			clientes = (List) clienteBl.obenerClientes();
+			assertTrue(clientes != null);
+			Cliente cliente = (Cliente) clientes.get(0);
+			log.info("Nombre Primer Cliente: " + cliente.getNombres());
+
 		} catch (DataBaseException e) {
 			e.printStackTrace();
 			System.out.println("Problema" + e.toString());
@@ -170,19 +177,17 @@ public class ClienteDAOImpTest {
 	}
 
 	/**
-	 * Prueba realizada para verificar que se pueda obtener la lista de todos
-	 * los clientes
+	 * Prueba realizada para verificar el metodo EliminarCliente de ClienteBl
 	 */
 	@Test
-	public void obtenerClientes() {
-		List clientes = null;
-		Logger log = Logger.getLogger(this.getClass());
+	public void testEliminarCliente() {
+		/**
+		 * Id del cliente a eliminar
+		 */
+		String idClienteEliminar = "47885";
 		try {
-			clientes = clienteDAO.obtenerClientes();
-			assertTrue(clientes != null);
-			Cliente cliente = (Cliente) clientes.get(0);
-			log.info("Nombre Primer Cliente: " + cliente.getNombres());
-
+			clienteBl.eliminarCliente(idClienteEliminar);
+			assertTrue(idClienteEliminar != null);
 		} catch (DataBaseException e) {
 			e.printStackTrace();
 			System.out.println("Problema" + e.toString());

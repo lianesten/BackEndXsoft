@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.ingenieriaweb.xsoftbackend.bl.SessionBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
-import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 
 /**
  * 

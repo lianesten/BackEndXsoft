@@ -18,7 +18,6 @@ public class Servicio  implements java.io.Serializable {
      private String nombre;
      private String descripcion;
      private double valor;
-     private Set serviciosventas = new HashSet(0);
 
     public Servicio() {
     }
@@ -34,7 +33,6 @@ public class Servicio  implements java.io.Serializable {
        this.nombre = nombre;
        this.descripcion = descripcion;
        this.valor = valor;
-       this.serviciosventas = serviciosventas;
     }
    
     public Integer getId() {

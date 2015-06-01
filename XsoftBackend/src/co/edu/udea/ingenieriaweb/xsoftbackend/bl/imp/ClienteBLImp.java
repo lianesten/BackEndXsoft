@@ -2,12 +2,13 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
 
 
-import antlr.collections.List;
+
 import co.edu.udea.ingenieriaweb.xsoftbackend.bl.ClienteBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.ClienteDAO;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
@@ -190,13 +191,13 @@ public class ClienteBLImp implements ClienteBl {
 	@Override
 	public List obenerClientes() throws DataBaseException, LogicException {
 		// TODO Auto-generated method stub
-		List listaClientes = (List) new ArrayList<Cliente>();
+		List listaClientes = new ArrayList<Cliente>();
 		try {
 			listaClientes = (List) clienteDAO.obtenerClientes();
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new DataBaseException(e,
-					"Error almacenando un Usuario en la BD");
+					"Error obteniendo los clientes de la BD");
 		}
 		return listaClientes;
 	}

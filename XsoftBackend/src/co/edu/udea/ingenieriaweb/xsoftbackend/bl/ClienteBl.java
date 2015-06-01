@@ -1,6 +1,7 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.bl;
 
-import antlr.collections.List;
+import java.util.List;
+
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
