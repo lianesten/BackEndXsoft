@@ -1,5 +1,7 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.dao;
 
+import java.util.List;
+
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
@@ -24,4 +26,26 @@ public interface ClienteDAO {
 	 * @throws DataBaseException
 	 */
 	public Cliente obtenerCliente(String identificacion)  throws DataBaseException;
+	
+	/**
+	 * Instancia del metodo que permite actualizar un cliente
+	 * @param cliente
+	 * @throws DataBaseException
+	 */
+	public void actualizarCliente(Cliente cliente) throws DataBaseException;
+	
+	/**
+	 * Instancia del metodo que permite eliminar un cliente de la DB
+	 * @param idCliente
+	 * @throws DataBaseException
+	 */
+	public void eliminarCliente(String idCliente) throws DataBaseException;
+	
+	/**
+	 * Instancia del metodo que permite obtener los Clientes en la DB
+	 * @return
+	 * @throws DataBaseException
+	 */
+	public List obtenerClientes() throws DataBaseException;
+	
 }

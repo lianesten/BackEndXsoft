@@ -59,7 +59,7 @@ public class UsuarioBLImp implements UsuarioBl{
 		
 	}
 	/**
-	 * Metodo para obtener un usuari oen la Bd dado su numeroId
+	 * Metodo para obtener un usuario en la Bd dado su numeroId
 	 */
 	@Override
 	public Usuario obtenerUsuario(String numeroId) throws DataBaseException,
@@ -101,8 +101,12 @@ public class UsuarioBLImp implements UsuarioBl{
 		}catch(DataBaseException e){
 			Logger  log = Logger.getLogger(this.getClass());
 			log.error("Error actualizando usuario: " +e);
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error actualizando un Usuario en la BD");
 			
+		}catch(Exception e){
+			Logger  log = Logger.getLogger(this.getClass());
+			log.error("Error actualizando usuario: " +e);
+			throw new DataBaseException(e, "Error actualizando un Usuario en la BD");
 		}
 		
 		
@@ -121,7 +125,7 @@ public class UsuarioBLImp implements UsuarioBl{
 		listaUsuarios = usuarioDAO.obtenerUsuarios();
 		}catch(Exception e){
 			e.printStackTrace();
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error obteniendo la lista de Clientes en la BD");
 		}
 		return listaUsuarios;
 	}
@@ -141,7 +145,7 @@ public class UsuarioBLImp implements UsuarioBl{
 		}catch(DataBaseException e){
 			Logger  log = Logger.getLogger(this.getClass());
 			log.error("Error eliminando usuario: " +e);
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error eliminando un Usuario en la BD");
 			
 		}
 		

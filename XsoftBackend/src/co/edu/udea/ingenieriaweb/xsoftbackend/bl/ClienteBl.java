@@ -1,5 +1,7 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.bl;
 
+import antlr.collections.List;
+import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
@@ -28,7 +30,38 @@ public interface ClienteBl {
 	 */
 	 public void GuardarCliente(String numeroId,String nombres,
 			 String apellidos, String telefonoFijo, String telefonomovil, String email,
-			 String direccion, Usuario usuarioCrea) throws DataBaseException, LogicException;
-
+			 String direccion, Usuario usuarioCrea) throws DataBaseException, LogicException;										
+	 /**
+	  * Matodo de la logica del cliente mediante el cual se obtiene un cliente desde la DB
+	  * @param idCliente
+	  * @return
+	  * @throws DataBaseException
+	  * @throws LogicException
+	  */
+	 public Cliente obtenerCliente(String idCliente)throws DataBaseException, LogicException;
+	 
+	 /**
+	  * Metodo de la logica del negocio mediante el cual se actualiza un cliente
+	  * @param cliente
+	  * @throws DataBaseException
+	  * @throws LogicException
+	  */
+	 public void actualizarCliente(Cliente cliente)throws DataBaseException, LogicException;
+	 
+	 /**
+	  * Metodo que permite obtener una lista con todos los clientes que estan en la DB
+	  * @return
+	  * @throws DataBaseException
+	  * @throws LogicException
+	  */
+	 public List obenerClientes()throws DataBaseException, LogicException;
+	 
+	 /**
+	  * Metodo de la logica del negocio que permite eliminar un cliente de la DB
+	  * @param idCliente
+	  * @throws DataBaseException
+	  * @throws LogicException
+	  */
+	 public void eliminarCliente(String idCliente)throws DataBaseException, LogicException; 
 }
 

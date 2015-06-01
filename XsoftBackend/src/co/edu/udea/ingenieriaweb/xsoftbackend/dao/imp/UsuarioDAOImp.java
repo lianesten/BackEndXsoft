@@ -3,7 +3,6 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp;
 import java.util.ArrayList;
 import java.util.List;
 
-import javassist.bytecode.Descriptor.Iterator;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -13,7 +12,6 @@ import org.hibernate.Transaction;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
-import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
@@ -35,7 +33,7 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			session.flush();
 			tx.commit();
 		}catch(HibernateException e){
-			log.error("Error guardando Cliente "+e);
+			log.error("Error guardando usuario "+e);
 			e.printStackTrace();
 			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
 		}catch(Exception e){
@@ -96,7 +94,7 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			//session.flush();
 			tx.commit();
 		}catch(HibernateException e){
-			log.error("Error guardando Cliente "+e);
+			log.error("Error actualizando usuario "+e);
 			e.printStackTrace();
 			throw new DataBaseException(e, "Error actualizando un Usuario en la BD");
 		}catch(Exception e){
@@ -112,23 +110,30 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	 */
 	@Override
 	public List<Usuario> obtenerUsuarios() throws DataBaseException {
-		List<Usuario> listaUsuarios = null;
+		List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+		session = null;
+		Logger log = null;
+		log = Logger.getLogger(this.getClass());
 		try{
 			
-			Transaction tx = session.beginTransaction();
-			listaUsuarios = (List<Usuario>) session.createQuery("from Usuario").list();
-			tx.commit();
+			session = getSession();
+			
+			/*Le indicamos que vamos a hacer consultas sobre la clase Cliente*/
+			Criteria criteria = session.createCriteria(Usuario.class);
+			
+			/*Obtenemos la lista de las Ciudades*/
+			listaUsuarios = criteria.list();
 			
 		}catch(HibernateException e){
-			log.error("Error guardando Cliente "+e);
+			log.error("Error obteniendo una lista de  usuario "+e);
 			System.out.println("Error guardando Cliente "+e.toString());
 			e.printStackTrace();
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error obteniendo la lista de usuarios en la DB");
 		}catch(Exception e){
 			System.out.println("Error en el UsuarioImp");
 			e.printStackTrace();
 			log.error("Error guardando Usuario"+e);
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error obteniendo la lista de usuarios en la DB");
 		}
 		
 		return listaUsuarios;
@@ -147,13 +152,13 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			//session.flush();
 			tx.commit();
 		}catch(HibernateException e){
-			log.error("Error guardando Cliente "+e);
+			log.error("Error guardando usuario "+e);
 			e.printStackTrace();
-			throw new DataBaseException(e, "Error actualizando un Usuario en la BD");
+			throw new DataBaseException(e, "Error eliminando usuario");
 		}catch(Exception e){
 			e.printStackTrace();
 			log.error("Error actualizando Usuario"+e);
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error eliminando usuario");
 		}
 		
 	}
