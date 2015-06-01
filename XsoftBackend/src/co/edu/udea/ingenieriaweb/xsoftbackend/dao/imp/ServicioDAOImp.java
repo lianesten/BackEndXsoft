@@ -16,6 +16,13 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicio;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
+/**
+ * Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
+ * la tabla Servicios en la Base de Datos
+ * 
+ * @author Equipo de desarrollo Xsoft
+ *
+ */
 public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 	private Session session;
 	public ServicioDAOImp() {
@@ -157,6 +164,11 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 
 		
 	}
+	/**
+	 * Metodo que permite obtener una lista con todos los servicios en la DB
+	 * 
+	 * @throws DataBaseException
+	 */
 
 	@Override
 	public List obtenerServicio() throws DataBaseException {

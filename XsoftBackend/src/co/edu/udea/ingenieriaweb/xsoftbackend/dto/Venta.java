@@ -18,11 +18,17 @@ public class Venta  implements java.io.Serializable {
     private Cliente cliente;
     private Usuario usuario;
     //private Set serviciosventas = new HashSet(0);
-
+    /**
+     * Constructor vacio de la Clase
+     */
    public Venta() {
    }
 
-	
+/**
+ * 	Contructor que permite ingresar un 
+ * @param cliente
+ * @param usuario
+ */
    public Venta(Cliente cliente, Usuario usuario) {
        this.cliente = cliente;
        this.usuario = usuario;

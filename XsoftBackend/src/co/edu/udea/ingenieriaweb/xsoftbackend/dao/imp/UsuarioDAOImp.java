@@ -17,13 +17,22 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
-
+/**
+ * Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
+ * la tabla Usuario en la Base de Datos
+ * 
+ * @author Equipo de desarrollo Xsoft
+ *
+ */
 public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	private Session session = null;
 	private Logger log;
 	
 	/**
-	 * Implementacion del metodo definido en la interface UsuarioDAO
+	 * Metodo que se utiliza para almacenar un Usuario en la Base de datos
+	 * 
+	 * @param usuario
+	 * @throws DataBaseException
 	 */
 	@Override
 	public void guardarUsuario(Usuario usuario) throws DataBaseException {
@@ -48,7 +57,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	}
 	
 	/**
-	 * Implementacion del metodo obtener usuario definido en la interface UsuarioDAO
+	 * Metodo para obtener un Usuario por medio de su Identificaci�n
+	 * 
+	 * @param numeroId
+	 * @throws DataBaseException
 	 */
 	@Override
 	public Usuario obtenerUsuario(String numeroId) throws DataBaseException {
@@ -86,6 +98,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	 * Implementacion del metodo definido en la interface UsuarioDAO, en este metodo 
 	 * se hace uso de hibernate para hacer la respectiva transacciond de actualizacion en 
 	 * la BD
+	 * 	/**
+	 * 
+	 * @param usuario
+	 * @throws DataBaseException
 	 */
 	@Override
 	public void actualizarUsuario(Usuario usuario) throws DataBaseException {
@@ -144,6 +160,10 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	
 	/**
 	 * Implementacion del metodo definido en UsuarioDAO. Permite eliminar un usuario en la bd dado su numeroid
+	 * DB
+	 * 
+	 * @param numeroId
+	 * @throws DataBaseException
 	 */
 	@Override
 	public void eliminarUsuario(String numeroId) throws DataBaseException {
@@ -168,10 +188,11 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 
 	/**
 	 * Metodo Mediante el cual se obtiene un usuario por medio de su username
+	 * @param username
+	 * @throws DataBaseException
 	 */
 	@Override
-	public Usuario obtenerUsuarioUsername(String username)
-			throws DataBaseException {
+	public Usuario obtenerUsuarioUsername(String username)throws DataBaseException {
 		session = null;
 		Logger log = null;
 		log = Logger.getLogger(this.getClass());

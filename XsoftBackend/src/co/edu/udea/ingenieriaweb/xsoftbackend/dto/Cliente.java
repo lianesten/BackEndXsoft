@@ -94,21 +94,21 @@ public class Cliente  implements java.io.Serializable {
         this.apellidos = apellidos;
     }
     /**
-     * Metodo que permite obtener el número telefonico de un Cliente
+     * Metodo que permite obtener el nï¿½mero telefonico de un Cliente
      * @return telefonoFijo
      */
     public String getTelefonoFijo() {
         return this.telefonoFijo;
     }
     /**
-     * Metodo que permite almacenar el número telefonico de un Cliente
+     * Metodo que permite almacenar el nï¿½mero telefonico de un Cliente
      * @param telefonoFijo
      */
     public void setTelefonoFijo(String telefonoFijo) {
         this.telefonoFijo = telefonoFijo;
     }
     /**
-     * Metodo que devuelve un String que contiene el número del telefono movil de un cliente
+     * Metodo que devuelve un String que contiene el nï¿½mero del telefono movil de un cliente
      * @return telefonoMovil
      */
     public String getTelefonoMovil() {
@@ -136,38 +136,47 @@ public class Cliente  implements java.io.Serializable {
         this.email = email;
     }
     /**
-     * Metodo que permite obtener un String con la dirección de un Cliente
+     * Metodo que permite obtener un String con la direcciï¿½n de un Cliente
      * @return direccion
      */
     public String getDireccion() {
         return this.direccion;
     }
     /**
-     * Metodo para almacenar la dirección de un Cliente
+     * Metodo para almacenar la direcciï¿½n de un Cliente
      * @param direccion
      */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+/**
+ * Metodo que permite obtener un String con el usuario de un Cliente
+ * @return usuarioCrea
+ */
 	public Usuario getUsuarioCrea() {
 		return usuarioCrea;
 	}
-
+/**
+ * Metodo para almacenar la direcciï¿½n de un Cliente
+ * @param usuarioCrea
+ */
 	public void setUsuarioCrea(Usuario usuarioCrea) {
 		this.usuarioCrea = usuarioCrea;
 	}
-
+/**
+ * Metodo que permite obtener un String con la fecha de creacion de un Cliente
+ * @return fechaCreacion
+ */
 	public Date getFechaCreacion() {
 		return fechaCreacion;
 	}
-
+/**
+ * Metodo para almacenar la fecha de creacion  de un Cliente
+ * @param fechaCreacion
+ */
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-
-
-
 }
 
 
