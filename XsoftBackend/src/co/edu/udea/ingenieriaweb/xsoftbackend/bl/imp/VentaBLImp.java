@@ -40,6 +40,13 @@ public class VentaBLImp implements VentaBl {
 	@Override
 	public void GuardarVenta(String numeroIdCliente, String usuarioCreaId)
 			throws DataBaseException, LogicException {
+		
+		if (numeroIdCliente == null || "".equals(numeroIdCliente)) {
+			throw new LogicException("La cedula del cliente no pueden ser vacio ni Nulo");
+		}
+		if (usuarioCreaId == null) {
+			throw new LogicException("El usuario no pueden ser Nulo");
+		}
 		try {
 			usuario = usuarioDAO.obtenerUsuario(usuarioCreaId);
 			cliente = clienteDAO.obtenerCliente(numeroIdCliente);

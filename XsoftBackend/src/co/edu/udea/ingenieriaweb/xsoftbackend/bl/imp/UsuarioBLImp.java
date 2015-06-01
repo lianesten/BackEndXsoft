@@ -38,7 +38,31 @@ public class UsuarioBLImp implements UsuarioBl{
 		if(numeroId==null|| "".equals(numeroId)){
 			throw new LogicException("La cedula no puede ser vacia ni Nula");
 		}
-		/*Hacer todas las demas validaciones correspondientes a las reglas del necogio*/
+		if (!numeroId.matches("[0-9]*")){
+			throw new LogicException("La cedula no puede contener letras");
+		}
+		if (nombres == null || "".equals(nombres)) {
+			throw new LogicException("Los nombres no pueden ser vacio ni Nulo");
+		}
+		if (apellidos == null || "".equals(apellidos)) {
+			throw new LogicException("Los apellidos no pueden ser vacio ni Nulo");
+		}
+		if (username == null || "".equals(username)) {
+			throw new LogicException("El nombre de usuario no pueden ser vacio ni Nulo");
+		}
+		
+		if (password == null || "".equals(password)) {
+			throw new LogicException("El password no pueden ser vacio ni Nulo");
+		}
+		if (email == null || "".equals(email)) {
+			throw new LogicException("El email no puede ser vacio ni Nulo");
+		}
+		String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+		Boolean b = email.matches(EMAIL_REGEX);
+		if (b == false ) {
+			throw new LogicException("El email no tiene un formato valido");
+		}
+		
 		
 		usuario = new Usuario();
 		usuario.setNumeroId(numeroId);
@@ -79,7 +103,7 @@ public class UsuarioBLImp implements UsuarioBl{
 		return usuario;
 	}
 	/**
-	 * Implementación del metodo actualizrUsuario definido en la interface, este metodo hace uso del 
+	 * Implementaciï¿½n del metodo actualizrUsuario definido en la interface, este metodo hace uso del 
 	 * POJO Usuario para enviarlo al DAO y hacer la respectiva operacion de UPDATe en la BD
 	 */
 	@Override
