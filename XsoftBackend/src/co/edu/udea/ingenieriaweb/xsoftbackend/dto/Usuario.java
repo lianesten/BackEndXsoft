@@ -16,8 +16,7 @@ public class Usuario  implements java.io.Serializable {
      private String username;
      private String password;
      private String email;
-//     private Set clientes = new HashSet(0);
-//     private Set ventas = new HashSet(0);
+     private String token;
 
      public Usuario() {
      }
@@ -84,6 +83,16 @@ public class Usuario  implements java.io.Serializable {
     }
 
 
+	public String getToken() {
+		return token;
+	}
+
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+    
 
 }
 

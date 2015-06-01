@@ -39,5 +39,9 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/JWT/jose4j-0.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/apacheCommons/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/javax-json/javax.json-1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

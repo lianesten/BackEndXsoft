@@ -154,5 +154,28 @@ public class UsuarioDAOImpTest {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Prueba realizada para verificar que se puede obtener un usuario por medio de su 
+	 * username
+	 */
+	@Test
+	public void testObtenerUsuarioUsername() {
+		/**
+		 * Username del usuario en la base de datos con nombre Joaquin
+		 */
+		String username = "jodaheca";
+
+		Usuario usuario = null;
+		try {
+			usuario = usuarioDAO.obtenerUsuarioUsername(username);
+			assertTrue(usuario != null);
+			Logger log = Logger.getLogger(this.getClass());
+			log.info("Nombre Usuario: " + usuario.getNombres());
+		} catch (DataBaseException e) {
+			e.printStackTrace();
+			fail("Not yet implemented");
+		}
+	}
 
 }

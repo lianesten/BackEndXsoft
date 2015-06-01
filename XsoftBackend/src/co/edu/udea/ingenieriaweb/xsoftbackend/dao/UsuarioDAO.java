@@ -41,4 +41,12 @@ public interface UsuarioDAO {
 	 */
 	public void eliminarUsuario(String numeroId) throws DataBaseException;
 	
+	/**
+	 * Metodo que permite obtener un usuario por medio de su Username
+	 * @param username
+	 * @return un objeto de la clase Usuario
+	 * @throws DataBaseException
+	 */
+	public Usuario obtenerUsuarioUsername(String username) throws DataBaseException;
+	
 }
