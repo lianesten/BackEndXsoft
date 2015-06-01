@@ -10,31 +10,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/hibernate3.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/commons-logging.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/mail.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-aop-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-beans-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-context-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-core-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-expression-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-jdbc-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-orm-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-test-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-tx-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-web-3.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_40">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>

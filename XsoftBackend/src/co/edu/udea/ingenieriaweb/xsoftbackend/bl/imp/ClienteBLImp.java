@@ -5,6 +5,8 @@ import java.util.Date;
 
 import org.apache.log4j.Logger;
 
+
+
 import antlr.collections.List;
 import co.edu.udea.ingenieriaweb.xsoftbackend.bl.ClienteBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.ClienteDAO;
@@ -53,10 +55,45 @@ public class ClienteBLImp implements ClienteBl {
 		if (numeroId == null || "".equals(numeroId)) {
 			throw new LogicException("La cedula no puede ser vacia ni Nula");
 		}
-		/*
-		 * Hacer todas las demas validaciones correspondientes a las reglas del
-		 * necogio
-		 */
+		if (!numeroId.matches("[0-9]*")){
+			throw new LogicException("La cedula no puede contener letras");
+		}
+		if (nombres == null || "".equals(nombres)) {
+			throw new LogicException("Los nombres no pueden ser vacio ni Nulo");
+		}
+		if (apellidos == null || "".equals(apellidos)) {
+			throw new LogicException("Los apellidos no pueden ser vacio ni Nulo");
+		}
+		if (!telefonoFijo.matches("[0-9]*")){
+			throw new LogicException("El telefono fijo no puede letras");
+		}
+		if (telefonoFijo == null || "".equals(email)) {
+			throw new LogicException("El email no puede ser vacio ni Nulo");
+		}
+		if (telefonoMovil == null || "".equals(telefonoMovil)) {
+			throw new LogicException("El telefono Movil no puede ser vacio ni Nulo");
+		}
+		if (!telefonoMovil.matches("[0-9]*")){
+			throw new LogicException("El telefono Movil no puede ser letras");
+		}
+		if (email == null || "".equals(email)) {
+			throw new LogicException("El email no puede ser vacio ni Nulo");
+		}
+		
+		if (direccion == null || "".equals(direccion)) {
+			throw new LogicException("La direccion no puede ser vacio ni Nulo");
+		}
+		String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+		Boolean b = email.matches(EMAIL_REGEX);
+		if (b == false ) {
+			throw new LogicException("El email no tiene un formato valido");
+		}
+		if (usuarioCrea == null) {
+			throw new LogicException("El usuario no puede ser null");
+		}
+		
+		
+	
 
 		Cliente cliente = new Cliente();
 		cliente.setNumeroId(numeroId);
@@ -79,6 +116,8 @@ public class ClienteBLImp implements ClienteBl {
 		}
 
 	}
+	
+	
 
 	/**
 	 * Metodo en la logica del negocio mediante el cual se obtiene un cliente de
