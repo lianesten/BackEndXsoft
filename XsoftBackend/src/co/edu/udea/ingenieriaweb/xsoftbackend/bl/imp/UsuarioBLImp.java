@@ -12,7 +12,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 /**
  * Clase que implementa todos los metodos definidos en la interface UsuarioBl
- * @author Xsoft developers Team
+ * @author Julian Montoya, Luis Duque
  *
  */
 public class UsuarioBLImp implements UsuarioBl{

@@ -9,7 +9,7 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.exception;
 /**
  * Clase realizada para controlor los errores presentados por la falta de informacion ingresada
  * o incompleta, Ejemplo (Fecha en formato erroneo,datos faltantes)
- * @author Grupo de Desarrollo Xsoft
+ * @author Joaquin Hernandez
  *
  */
 public class LogicException extends Exception {
@@ -22,4 +22,12 @@ public class LogicException extends Exception {
 		super(mensaje);
 	}
 
+	/**
+	 * 
+	 * @param e
+	 * @param mensaje
+	 */
+	public LogicException(Exception e, String mensaje) {
+		super(mensaje);
+	}
 }

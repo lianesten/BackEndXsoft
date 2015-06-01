@@ -5,6 +5,11 @@ import java.util.List;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
+/**
+ * 
+ * @author Julian Montoya, Luis Duque, Joaquin Hernandez
+ *
+ */
 public interface UsuarioDAO {
 	/**
 	 * Se define el metodo encargado de guardar un nuevo usuario en la base de datos
@@ -16,7 +21,7 @@ public interface UsuarioDAO {
 	 * Definicion del metodo que permite obtener un solo usuario de la base de datos dado 
 	 * su numero de identificacion
 	 * @param numeroId es el numero unico de identificacion de cada persona con el roll usuario
-	 * @return
+	 * @return Usuario 
 	 * @throws DataBaseException
 	 */
 	public Usuario obtenerUsuario(String numeroId) throws DataBaseException;

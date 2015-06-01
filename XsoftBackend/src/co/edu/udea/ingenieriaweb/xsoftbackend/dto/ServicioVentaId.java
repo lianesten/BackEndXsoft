@@ -3,7 +3,7 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.dto;
 /**
  * Clase creada para registrar las claves primarias de la tabla ServicioVenta en la 
  * Basede datos
- * @author Equipo de desarrollo Xsoft
+ * @author Joaquin Hernandez, Luis Zambrano
  *
  */
 public class ServicioVentaId  implements java.io.Serializable {

@@ -12,14 +12,14 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
 /**
  * Interface que contiene la logica del negocio que se va implementar sobre la tabla venta 
- * @author USUARIO
+ * @author Julian Montoya, Luis Duque, Joaquin Hernandez
  *
  */
 public interface VentaBl {
 	/**
 	 * Metodo que me permite almacenar una nueva venta en la BD.
-	 * @param cliente es aquel quien realizo la compra
-	 * @param usuario es aquel quien realizo la venta
+	 * @param numeroIdCliente
+	 * @param usuarioCreaId
 	 * @throws DataBaseException
 	 * @throws LogicException
 	 */

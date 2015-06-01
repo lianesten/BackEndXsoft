@@ -16,6 +16,11 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Servicio;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
+/**
+ * 
+ * @author  Alejandro Zambrano, Joaquin Hernandez
+ *
+ */
 public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 	private Session session;
 	public ServicioDAOImp() {
@@ -39,14 +44,12 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 
 			/* catch para caturar algun posible Error */
 		} catch (HibernateException e) {
-			log.error("Error guardando Servicio" + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un Servicio en la BD");
 
 		} catch (Exception e) {
-			log.error("Error guardando Servicio" + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un Servicio en la BD");
 		}
@@ -81,14 +84,11 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 
 				/* catch para caturar algun posible Error */
 			} catch (HibernateException e) {
-				e.printStackTrace();
-				log.error("Error en HibernateException: " + e.getMessage());
+				log.error(e);
 				throw new DataBaseException(e);
 
 			} catch (Exception e) {
-				log.error("Entra por el Exception general ServicioDAOImp: "
-						+ e.getMessage());
-				e.printStackTrace();
+				log.error(e);
 				throw new DataBaseException(e,
 						"Error general que se presenta en el ServicioDaoImp, metodo obtener Servicio");
 			}
@@ -112,13 +112,11 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 			// session.flush();
 			tx.commit();
 		} catch (HibernateException e) {
-			log.error("Error actualizando Servicio " + e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error actualizando un Servicio en la BD");
 		} catch (Exception e) {
-			e.printStackTrace();
-			log.error("Error actualizando Servicio" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error actualizando un Servicio en la BD");
 		}
@@ -146,12 +144,10 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 			// session.flush();
 			tx.commit();
 		} catch (HibernateException e) {
-			log.error("Error eliminando servicio " + e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,"Error eliminando un servicio en la BD");
 		} catch (Exception e) {
-			e.printStackTrace();
-			log.error("Error actualizando servicio" + e);
+			log.error(e);
 			throw new DataBaseException(e,"Error eliminando un servicio en la BD");
 		}
 
@@ -175,14 +171,11 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 			listaServicio = criteria.list();
 
 		} catch (HibernateException e) {
-			log.error("Error obteniendo una lista de  Servicios " + e);
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error obteniendo la lista de servicios en la DB");
 		} catch (Exception e) {
-			System.out.println("Error en el ServicioDAOImp");
-			e.printStackTrace();
-			log.error("Error obteniendo lista de servicios " + e.toString());
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error obteniendo la lista de servicios en la DB");
 		}

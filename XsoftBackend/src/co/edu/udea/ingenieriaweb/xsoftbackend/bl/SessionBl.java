@@ -1,15 +1,24 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.bl;
 
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
+/**
+ * 
+ * @author Joaquin Hernandez
+ *
+ */
 public interface SessionBl {
 	/**
-	 * Metodo mediante el cual se verifica el logeo de un usuario en el sistema
+	 *  Metodo mediante el cual se verifica el logeo de un usuario en el sistema
 	 * @param username
 	 * @param password
-	 * @return String con el token del usuario
+	 * @return token de la session
+	 * @throws LogicException
+	 * @throws DataBaseException
 	 */
-	public String autenticar(String username, String password);
+	public String autenticar(String username, String password) throws LogicException, DataBaseException;
 	
 	/**
 	 *Metodo mediante el cual se cierra la sesion de un usuario en la DB 

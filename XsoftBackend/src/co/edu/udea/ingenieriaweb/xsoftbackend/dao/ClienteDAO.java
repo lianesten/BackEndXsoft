@@ -8,7 +8,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
 /**
  * 
- * @author Equipo Desarrollo Xsoft 
+ * @author Joaquin Hernandez
  * Interfaces que contienelos metodo que permiten hacer operaciones de el DTO Cliente en la DB
  *
  */
@@ -22,7 +22,6 @@ public interface ClienteDAO {
 	/**
 	 * Metodo para obtener un cliente con el Id
 	 * @param identificacion
-	 * @return
 	 * @throws DataBaseException
 	 */
 	public Cliente obtenerCliente(String identificacion)  throws DataBaseException;
@@ -43,7 +42,6 @@ public interface ClienteDAO {
 	
 	/**
 	 * Instancia del metodo que permite obtener los Clientes en la DB
-	 * @return
 	 * @throws DataBaseException
 	 */
 	public List obtenerClientes() throws DataBaseException;

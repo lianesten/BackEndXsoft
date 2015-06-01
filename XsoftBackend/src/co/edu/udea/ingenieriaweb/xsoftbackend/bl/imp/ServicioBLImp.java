@@ -15,7 +15,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
  * Clase que contiene la logica del negocio para realizar operaciones con la
  * tabla Servicios en la Base de datos
  * 
- * @author Equipo Desarrollo Xsoft
+ * @author Alejandro Zambrano
  *
  */
 public class ServicioBLImp implements ServicioBL{
@@ -35,7 +35,6 @@ public class ServicioBLImp implements ServicioBL{
 
 	/**
 	 * Metodo de la Logica del negocio mediante el cual se ingresa un servicio a la DB
-	 * @param id
 	 * @param descripcion
 	 * @param nombres
 	 * @param valor
@@ -130,7 +129,7 @@ public class ServicioBLImp implements ServicioBL{
 	/**
 	 * Implemementación del metodo obtenerServicios por medio del cual se implementa la logica para obtener
 	 * un Lista de todos los Servicios en la DB
-	 * @return
+	 * @return List
 	 * @throws DataBaseException
 	 * @throws LogicException
 	 */

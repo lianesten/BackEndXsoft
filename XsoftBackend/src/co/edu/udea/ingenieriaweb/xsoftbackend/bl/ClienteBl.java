@@ -10,7 +10,7 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 /**
  * Interface que contiene la logica del negocio que se va a implementar sobre la tabla Clientes 
  * en la Base de Datos
- * @author Equipo de Desarrollo Xsoft
+ * @author Joaquin Hernandez
  *
  */
 public interface ClienteBl {
@@ -35,7 +35,7 @@ public interface ClienteBl {
 	 /**
 	  * Matodo de la logica del cliente mediante el cual se obtiene un cliente desde la DB
 	  * @param idCliente
-	  * @return
+	  * @return Cliente
 	  * @throws DataBaseException
 	  * @throws LogicException
 	  */

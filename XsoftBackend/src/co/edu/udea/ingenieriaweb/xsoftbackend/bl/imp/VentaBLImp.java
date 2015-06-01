@@ -15,7 +15,11 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
-/** clase que implementa todos los metodos definos en la interface venta */
+/**
+ * 
+ * @author Julian Montoya, Luis Duque
+ *
+ */
 public class VentaBLImp implements VentaBl {
 	private Venta venta;
 	private Usuario usuario;

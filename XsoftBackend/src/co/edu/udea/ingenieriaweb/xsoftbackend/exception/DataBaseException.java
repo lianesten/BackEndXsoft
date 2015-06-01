@@ -4,7 +4,7 @@ import org.hibernate.HibernateException;
 
 /**
  * Clase que permite controlar las excepciones que se puedan presentar en la aplicación 
- * @author Equipo desarrollo Xsoft
+ * @author Joaquin Hernandez
  *
  */
 

@@ -13,6 +13,11 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dao.VentaDAO;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
+/**
+ * 
+ * @author  Julian Montoya, Luis Duque, Joaquin Hernandez, Alejandro Zambrano
+ *
+ */
 public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 	private Session session = null;
 	private Logger log;
@@ -29,16 +34,12 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			tx.commit();
 			/* catch para caturar algun posible Error */
 		} catch (HibernateException e) {
-			log.error("Error guardando Venta" + e);
-			System.out.println("Error Guardando Venta" + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un venta en la BD");
 
 		} catch (Exception e) {
-			System.out.println("Error en el VentaDAOImp");
-			e.printStackTrace();
-			log.error("Error guardando Venta" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un venta en la BD");
 		}
@@ -62,15 +63,11 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			venta = (Venta) session.get(Venta.class, idVenta);
 
 		} catch (HibernateException e) {
-			log.error("Error guardando Cliente " + e);
-			System.out.println("Error obteniendo Venta" + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un Venta en la BD");
 		} catch (Exception e) {
-			System.out.println("Error en el VentaDAOImp");
-			e.printStackTrace();
-			log.error("Error obteniendo Venta" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un venta en la BD");
 		}
@@ -87,15 +84,11 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			// session.flush();
 			tx.commit();
 		} catch (HibernateException e) {
-			log.error("Error actualizando venta" + e);
-			System.out.println("Error actualizando venta " + e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error actualizando una venta en la BD");
 		} catch (Exception e) {
-			System.out.println("Error en el VentaDAOImp");
-			e.printStackTrace();
-			log.error("Error actualizando venta" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un venta en la BD");
 		}
@@ -119,16 +112,11 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 			listadoVentas = criteria.list();
 
 		} catch (HibernateException e) {
-			log.error("Error obteniendo listado de ventas " + e);
-			System.out.println("Error obteniendo listado de ventas "
-					+ e.toString());
-			e.printStackTrace();
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error obteniendo listado de ventas en la BD");
 		} catch (Exception e) {
-			System.out.println("Error en el VentasDAOImp");
-			e.printStackTrace();
-			log.error("Error obteniendo listado de ventas" + e);
+			log.error(e);
 			throw new DataBaseException(e,
 					"Error almacenando un venta en la BD");
 		}
