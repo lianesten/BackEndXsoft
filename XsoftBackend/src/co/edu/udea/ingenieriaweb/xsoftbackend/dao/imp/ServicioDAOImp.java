@@ -17,7 +17,9 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
 /**
- * 
+
+ ** Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
+ * la tabla Servicios en la Base de Datos 
  * @author  Alejandro Zambrano, Joaquin Hernandez
  *
  */
@@ -153,6 +155,11 @@ public class ServicioDAOImp extends HibernateDaoSupport implements ServicioDAO{
 
 		
 	}
+	/**
+	 * Metodo que permite obtener una lista con todos los servicios en la DB
+	 * 
+	 * @throws DataBaseException
+	 */
 
 	@Override
 	public List obtenerServicio() throws DataBaseException {

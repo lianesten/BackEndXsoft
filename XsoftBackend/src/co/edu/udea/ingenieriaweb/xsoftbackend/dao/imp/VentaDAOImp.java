@@ -14,13 +14,21 @@ import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Venta;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 
 /**
- * 
+ *  Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
+ * la tabla Venta en la Base de Datos
  * @author  Julian Montoya, Luis Duque, Joaquin Hernandez, Alejandro Zambrano
  *
  */
 public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 	private Session session = null;
 	private Logger log;
+	
+	/**
+	 * Metodo que se utiliza para almacenar una Venta en la Base de datos
+	 * 
+	 * @param venta
+	 * @throws DataBaseException
+	 */
 
 	@Override
 	public void guardarVenta(Venta venta) throws DataBaseException {
@@ -45,6 +53,12 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 		}
 
 	}
+	/**
+	 * Metodo para obtener una Venta por medio de su Identificaci�n
+	 * 
+	 * @param idVenta
+	 * @throws DataBaseException
+	 */
 
 	@Override
 	public Venta obtenerVenta(Integer idVenta) throws DataBaseException {
@@ -74,6 +88,12 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 		return venta;
 	}
 
+	/**
+	 * Metodo mediante el cual se actualiza una Venta existente en la DB
+	 * 
+	 * @param venta
+	 * @throws DataBaseException
+	 */
 	@Override
 	public void actualizarVenta(Venta venta) throws DataBaseException {
 		log = Logger.getLogger(this.getClass());
@@ -94,7 +114,11 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 		}
 
 	}
-
+	/**
+	 * Metodo que permite obtener una lista con todos las Ventas en la DB
+	 * 
+	 * @throws DataBaseException
+	 */
 	@Override
 	public List<Venta> obtenerVentas() throws DataBaseException {
 		List<Venta> listadoVentas = null;

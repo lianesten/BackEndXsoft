@@ -62,7 +62,7 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 	}
 
 	/**
-	 * Metodo para obtener un Cliente por medio de su Identificación
+	 * Metodo para obtener un Cliente por medio de su Identificaciï¿½n
 	 * 
 	 * @param identificacion
 	 * @throws DataBaseException
@@ -161,7 +161,7 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 	}
 
 	/**
-	 * Metodo que permite obtener una lista con todos los usuarios en la DB
+	 * Metodo que permite obtener una lista con todos los Clientes en la DB
 	 * 
 	 * @throws DataBaseException
 	 */
