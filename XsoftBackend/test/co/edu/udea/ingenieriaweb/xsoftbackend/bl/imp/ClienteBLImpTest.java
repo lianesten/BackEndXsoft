@@ -91,11 +91,11 @@ public class ClienteBLImpTest {
 		 * Identificacion del Usuario en la base de datos con nombre Pablo
 		 * Andres
 		 */
-		String identificacion = "120365485";
+		String identificacion = "1236";
 		try {
 				cliente = clienteBl.obtenerCliente(identificacion); 
 		
-			assertTrue(cliente.getNumeroId().equals("120365485"));
+			assertTrue(cliente.getNumeroId().equals("1236"));
 			Logger log = Logger.getLogger(this.getClass());
 			log.info("Nombre Cliente: " + cliente.getNombres());
 		} catch (DataBaseException e) {

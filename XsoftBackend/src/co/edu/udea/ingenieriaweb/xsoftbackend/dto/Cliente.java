@@ -2,6 +2,8 @@ package co.edu.udea.ingenieriaweb.xsoftbackend.dto;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 
 
 /**
@@ -9,6 +11,7 @@ import java.util.Date;
  * @author Joaquin Hernandez, Luis Zambrano
  * DTO de la tabla Cliente en la Base de datos
  */
+@XmlRootElement
 public class Cliente  implements java.io.Serializable {
 
 
