@@ -58,15 +58,15 @@ public class SessionBLImp implements SessionBl {
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	e.printStackTrace();
 				log.error("El usuario no existe en la base de datos"+ e.toString());
-				new LogicException(e, "El usuario o la contraseña ingresados no son validos");
+				throw new LogicException(e, "El usuario o la contraseña ingresados no son validos");
 	        }
 	        /**
 	         * Verificamos la contraseña coincide
 	         */
-	        if(usuario.getPassword()!=password){
+	        if(!usuario.getPassword().equals(password)){
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	log.error("Contraseña  incorrecta");
-				new LogicException("El usuario o la contraseña ingresados no son validos");
+	        	throw new LogicException("El usuario o la contraseña ingresados no son validos");
 	        }
 	        
 	        /**
@@ -94,22 +94,22 @@ public class SessionBLImp implements SessionBl {
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	ex.printStackTrace();
 				log.error("Error obteniendo el usuario por medio de su Username, "+ ex.toString());
-				new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
+				throw new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
 	        }catch (IllegalArgumentException ex){
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	ex.printStackTrace();
 				log.error("Error obteniendo el usuario por medio de su Username"+ ex.toString());
-				new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
+				throw new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
 	        } catch (NoSuchAlgorithmException ex){
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	ex.printStackTrace();
 				log.error("Error obteniendo el usuario por medio de su Username"+ ex.toString());
-				new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
+				throw new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
 	        } catch (InvalidKeyException ex){
 	        	Logger log = Logger.getLogger(this.getClass());
 	        	ex.printStackTrace();
 				log.error("Error obteniendo el usuario por medio de su Username"+ ex.toString());
-				new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
+				throw new DataBaseException(ex, "Error obteniendo usuario por Usernaname");
 	        }
 	        
 	        usuario.setToken(token);
@@ -119,7 +119,7 @@ public class SessionBLImp implements SessionBl {
 				Logger log = Logger.getLogger(this.getClass());
 	        	e.printStackTrace();
 				log.error("Error obteniendo el usuario por medio de su Username"+ e.toString());
-				new DataBaseException(e, "El usuario o la contraseña no son validos");
+				throw new DataBaseException(e, "El usuario o la contraseña no son validos");
 			}
 		return token;
 	}
@@ -128,18 +128,18 @@ public class SessionBLImp implements SessionBl {
     /**
      * Cierra una sesión de usuario de usuario a partir de un token.
      * @param  token Token que contiene los datos de la sesión del usuario       
+     * @throws DataBaseException 
      */
 	@Override
-	public void cerrarSesion(String idUsuario) {
+	public void cerrarSesion(String token) throws DataBaseException {
 		 try {
-			 Usuario usuario  = usuarioDAO.obtenerUsuario(idUsuario);
+			 Usuario usuario  = usuarioDAO.obtenerUsuarioToken(token);
 	            usuario.setToken(null);
 	            usuarioDAO.actualizarUsuario(usuario);                
 	        } catch (DataBaseException ex) {
 	        	Logger log = Logger.getLogger(this.getClass());
-	        	ex.printStackTrace();
 				log.error("Error cerrando la sesion"+ ex.toString());
-				new DataBaseException(ex, "La sesion no pudo ser cerrada, intente luego");
+				throw new DataBaseException(ex, "La sesion no pudo ser cerrada, intente luego");
 	            
 	           
 	        }

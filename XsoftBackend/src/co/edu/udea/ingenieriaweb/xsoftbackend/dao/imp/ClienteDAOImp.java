@@ -1,5 +1,7 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp;
 
+import java.sql.BatchUpdateException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,11 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 	 * @throws DataBaseException
 	 */
 	@Override
-	public void guardarCliente(Cliente cliente) throws DataBaseException {
+	public void guardarCliente(Cliente cliente) throws DataBaseException, LogicException {
+		Cliente clienteActual = obtenerCliente(cliente.getNumeroId());
+		if(clienteActual !=null){
+			throw new LogicException("Ya existe un cliente con la identificacion ingresada");
+		}
 		Session session = null;
 		Logger log = Logger.getLogger(this.getClass());
 		try {
@@ -48,15 +54,15 @@ public class ClienteDAOImp extends HibernateDaoSupport implements ClienteDAO {
 			tx.commit();
 
 			/* catch para caturar algun posible Error */
-		} catch (HibernateException e) {
+		}catch (HibernateException e) {
 			log.error(e);
-			throw new DataBaseException(e,
+			 throw new DataBaseException(e,
 					"Error almacenando un Cliente en la BD");
 
 		} catch (Exception e) {
 			log.error(e);
 			throw new DataBaseException(e,
-					"Error almacenando un Cliente en la BD");
+					"Error general almacenando un Cliente en la BD");
 		}
 
 	}

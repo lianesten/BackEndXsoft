@@ -1,9 +1,11 @@
 package co.edu.udea.ingenieriaweb.xsoftbackend.dao;
 
+import java.sql.BatchUpdateException;
 import java.util.List;
 
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
 
 /**
@@ -18,7 +20,7 @@ public interface ClienteDAO {
 	 * @param cliente
 	 * @throws DataBaseException
 	 */
-	public void guardarCliente(Cliente cliente) throws DataBaseException;
+	public void guardarCliente(Cliente cliente) throws DataBaseException, LogicException;
 	/**
 	 * Metodo para obtener un cliente con el Id
 	 * @param identificacion

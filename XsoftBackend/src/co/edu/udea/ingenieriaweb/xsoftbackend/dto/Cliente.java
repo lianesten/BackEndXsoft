@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Joaquin Hernandez, Luis Zambrano
  * DTO de la tabla Cliente en la Base de datos
  */
-@XmlRootElement
 public class Cliente  implements java.io.Serializable {
 
 

@@ -25,6 +25,14 @@ public interface UsuarioDAO {
 	 * @throws DataBaseException
 	 */
 	public Usuario obtenerUsuario(String numeroId) throws DataBaseException;
+
+	/**
+	 * Metodo mediante el cual se obtiene un usuario desde la DB mediante su token
+	 * @param token
+	 * @return
+	 * @throws DataBaseException
+	 */
+	public Usuario obtenerUsuarioToken(String token) throws DataBaseException;
 	/**
 	 * Definicion del metodo obtener usuario el cual permite obtener todos los usuarios de la bd
 	 * @return un lista con todos los usuarios que se encuentran almacenados en la bd

@@ -6,11 +6,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-
-
-
 import co.edu.udea.ingenieriaweb.xsoftbackend.bl.ClienteBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.ClienteDAO;
+import co.edu.udea.ingenieriaweb.xsoftbackend.dao.imp.ClienteDAOImp;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
@@ -56,45 +54,45 @@ public class ClienteBLImp implements ClienteBl {
 		if (numeroId == null || "".equals(numeroId)) {
 			throw new LogicException("La cedula no puede ser vacia ni Nula");
 		}
-		if (!numeroId.matches("[0-9]*")){
+		if (!numeroId.matches("[0-9]*")) {
 			throw new LogicException("La cedula no puede contener letras");
 		}
 		if (nombres == null || "".equals(nombres)) {
 			throw new LogicException("Los nombres no pueden ser vacio ni Nulo");
 		}
 		if (apellidos == null || "".equals(apellidos)) {
-			throw new LogicException("Los apellidos no pueden ser vacio ni Nulo");
+			throw new LogicException(
+					"Los apellidos no pueden ser vacio ni Nulo");
 		}
-		if (!telefonoFijo.matches("[0-9]*")){
-			throw new LogicException("El telefono fijo no puede letras");
+		if (telefonoFijo == null || "".equals(telefonoFijo)) {
+			throw new LogicException(
+					"El telefono fijo no puede ser vacio ni Nulo");
 		}
-		if (telefonoFijo == null || "".equals(email)) {
-			throw new LogicException("El email no puede ser vacio ni Nulo");
+		if (!telefonoFijo.matches("[0-9]*")) {
+			throw new LogicException("El telefono fijo debe ser un numero");
 		}
 		if (telefonoMovil == null || "".equals(telefonoMovil)) {
-			throw new LogicException("El telefono Movil no puede ser vacio ni Nulo");
+			throw new LogicException(
+					"El telefono Movil no puede ser vacio ni Nulo");
 		}
-		if (!telefonoMovil.matches("[0-9]*")){
-			throw new LogicException("El telefono Movil no puede ser letras");
+		if (!telefonoMovil.matches("[0-9]*")) {
+			throw new LogicException("El telefono Movil dene ser un numero");
 		}
 		if (email == null || "".equals(email)) {
 			throw new LogicException("El email no puede ser vacio ni Nulo");
 		}
-		
+
 		if (direccion == null || "".equals(direccion)) {
 			throw new LogicException("La direccion no puede ser vacio ni Nulo");
 		}
 		String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 		Boolean b = email.matches(EMAIL_REGEX);
-		if (b == false ) {
+		if (b == false) {
 			throw new LogicException("El email no tiene un formato valido");
 		}
 		if (usuarioCrea == null) {
 			throw new LogicException("El usuario no puede ser null");
 		}
-		
-		
-	
 
 		Cliente cliente = new Cliente();
 		cliente.setNumeroId(numeroId);
@@ -109,6 +107,8 @@ public class ClienteBLImp implements ClienteBl {
 
 		try {
 			clienteDAO.guardarCliente(cliente);
+		} catch (LogicException e) {
+			throw new LogicException(e.getMessage());
 		} catch (Exception e) {
 			Logger log = Logger.getLogger(this.getClass());
 			log.error("Error en el almacenamiento de Cliente: " + e);
@@ -117,8 +117,6 @@ public class ClienteBLImp implements ClienteBl {
 		}
 
 	}
-	
-	
 
 	/**
 	 * Metodo en la logica del negocio mediante el cual se obtiene un cliente de
@@ -131,6 +129,7 @@ public class ClienteBLImp implements ClienteBl {
 	@Override
 	public Cliente obtenerCliente(String idCliente) throws DataBaseException,
 			LogicException {
+
 		if (idCliente == null || "".equals(idCliente)) {
 			throw new LogicException(
 					"Se debe digitar la identificacion del Cliente a obtener");
@@ -138,17 +137,18 @@ public class ClienteBLImp implements ClienteBl {
 		Cliente cliente = null;
 		try {
 			cliente = clienteDAO.obtenerCliente(idCliente);
+			System.out.println("Cliente: " + cliente);
 		} catch (DataBaseException e) {
 			Logger log = Logger.getLogger(this.getClass());
-			log.error("Error en el almacenamiento de Cliente: " + e);
+			log.error(e);
 			throw new DataBaseException(e,
-					"Error almacenando un cliente en la DB");
+					"Error obteniendo un cliente de la DB");
 
 		} catch (Exception e) {
 			Logger log = Logger.getLogger(this.getClass());
-			log.error("Error en el almacenamiento de Cliente: " + e);
+			log.error(e);
 			throw new DataBaseException(e,
-					"Error general almacenando un Cliente en la DB");
+					"Error obteniendo un cliente de la DB");
 		}
 		return cliente;
 	}

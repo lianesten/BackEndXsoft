@@ -53,7 +53,7 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	}
 	
 	/**
-	 * Metodo para obtener un Usuario por medio de su Identificaci�n
+	 * Metodo para obtener un Usuario por medio de su Identificacion
 	 * 
 	 * @param numeroId
 	 * @throws DataBaseException
@@ -81,12 +81,49 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			throw new DataBaseException(e, "Error obtendiendo un Usuario en la BD");
 		}catch(Exception e){
 			log.error(e);
-			throw new DataBaseException(e, "Error almacenando un Usuario en la BD");
+			throw new DataBaseException(e, "Error obteniendo un Usuario en la BD");
 		}
 		
 		return usuario;
 		
 	}
+	
+	
+	/**
+	 * Metodo para obtener un Usuario por medio de su token
+	 * 
+	 * @param token
+	 * @throws DataBaseException
+	 */
+	@Override
+	public Usuario obtenerUsuarioToken(String token) throws DataBaseException {
+		log = Logger.getLogger(this.getClass());
+		Usuario usuario=null;
+		try{
+			//user = (Usuario) session.createQuery("SELECT usuario FROM Usuario WHERE numeroId="+numeroId).uniqueResult();
+			/*Obtenemos la sesion mediante la cual nos vamos a conectar*/
+			session = getSession();
+			
+			/*Le indicamos que vamos a hacer consultas sobre la clase Usuario*/
+			Criteria criteria = session.createCriteria(Usuario.class)
+					.add(Restrictions.eq("token", token));
+			
+			/*Obtenemos el usuario*/
+			usuario =(Usuario) criteria.list().get(0);
+				
+			
+		}catch(HibernateException e){
+			log.error(e);
+			throw new DataBaseException(e, "Error obtendiendo un Usuario en la BD");
+		}catch(Exception e){
+			log.error(e);
+			throw new DataBaseException(e, "Error obteniendo un Usuario en la BD");
+		}
+		
+		return usuario;
+		
+	}
+	
 	
 	/**
 	 * Implementacion del metodo definido en la interface UsuarioDAO, en este metodo 

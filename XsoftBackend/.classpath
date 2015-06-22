@@ -148,56 +148,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-aop-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-beans-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-context-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-core-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-expression-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-jdbc-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-orm-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-test-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-tx-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/Spring/spring-web-3.2.0.RC1.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/gson-2.2.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -214,6 +164,66 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/GitHub/XsoftBackend/XsoftBackend/lib/mysql-connector-java-5.1.22-bin.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/com.springsource.org.aopalliance-1.0.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/commons-logging.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-aop-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-beans-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-context-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-core-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-expression-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-jdbc-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-orm-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-test-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-tx-4.1.6.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Programas/Librerias/Spring4/Spring4/spring-web-4.1.6.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
