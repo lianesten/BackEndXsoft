@@ -24,5 +24,5 @@ public interface SessionBl {
 	 *Metodo mediante el cual se cierra la sesion de un usuario en la DB 
 	 * @param usuario
 	 */
-	public void cerrarSesion(String idUsuario) throws DataBaseException;
+	public void cerrarSesion(String idUsuario) throws DataBaseException, LogicException;
 }

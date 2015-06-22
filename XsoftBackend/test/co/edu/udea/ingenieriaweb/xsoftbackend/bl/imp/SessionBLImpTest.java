@@ -49,7 +49,6 @@ public class SessionBLImpTest {
 			Logger log = Logger.getLogger(this.getClass());
 			log.info("Token: "+ token);
 		}catch(Exception e){
-			e.printStackTrace();
 		}
 	}
 	

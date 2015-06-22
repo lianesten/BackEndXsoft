@@ -131,17 +131,22 @@ public class SessionBLImp implements SessionBl {
      * @throws DataBaseException 
      */
 	@Override
-	public void cerrarSesion(String token) throws DataBaseException {
+	public void cerrarSesion(String token) throws DataBaseException, LogicException {
 		 try {
 			 Usuario usuario  = usuarioDAO.obtenerUsuarioToken(token);
+			 if(usuario==null || "".equals(usuario.getNumeroId())){
+				 throw new LogicException("EL token es invalido");
+			 }
 	            usuario.setToken(null);
 	            usuarioDAO.actualizarUsuario(usuario);                
 	        } catch (DataBaseException ex) {
 	        	Logger log = Logger.getLogger(this.getClass());
-				log.error("Error cerrando la sesion"+ ex.toString());
+				log.error("Error cerrando la sesion: "+ ex.toString());
 				throw new DataBaseException(ex, "La sesion no pudo ser cerrada, intente luego");
 	            
 	           
+	        }catch(LogicException e){
+	        	throw new LogicException(e.getMessage());
 	        }
 	}
 

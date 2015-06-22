@@ -74,14 +74,34 @@ public class SessionResource {
 
 		return token;
 	}
-	
-	 @GET
-	    @Path("logout")
-	    @Produces(MediaType.APPLICATION_JSON)
-	    public Object cerrarSesion(@QueryParam("token") String token){
-		 
-		 return null;
-	 }
-	
-	
+
+	/**
+	 * Servicio mendiante el cual se cierra la sesion de un usuario, recibe como
+	 * parametro el token de la sesion del usuario
+	 * 
+	 * @param token
+	 * @return
+	 */
+	@GET
+	@Path("logout")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Object cerrarSesion(@QueryParam("token") String token) {
+
+		Logger log = Logger.getLogger(this.getClass());
+		Gson gson = new Gson();
+		if (token == null || "".equals(token)) {
+			return gson.toJson("Debe ingresar el token de la sesion a cerrar");
+		}
+
+		try {
+				sessionBL.cerrarSesion(token);
+			} catch (LogicException e) {
+			return gson.toJson(e.getMessage());
+				
+			} catch (DataBaseException e) {
+			return gson.toJson(e.getMessage());
+		}
+		return gson.toJson("La sesion se cerro exitosamente");
+	}
+
 }

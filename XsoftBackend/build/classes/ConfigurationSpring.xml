@@ -114,6 +114,7 @@
 		class="co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.ServicioBLImp">
 		<property name="servicioDAO" ref="servicioDAO" />
 	</bean>
+	
 
 	<context:component-scan base-package="co.edu.udea.ingenieriaweb.xsoftbackend.ws"></context:component-scan>
 </beans>

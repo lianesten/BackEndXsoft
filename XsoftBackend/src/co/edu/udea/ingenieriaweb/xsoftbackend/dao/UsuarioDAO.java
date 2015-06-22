@@ -4,6 +4,7 @@ import java.util.List;
 
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
 /**
  * 
@@ -32,7 +33,7 @@ public interface UsuarioDAO {
 	 * @return
 	 * @throws DataBaseException
 	 */
-	public Usuario obtenerUsuarioToken(String token) throws DataBaseException;
+	public Usuario obtenerUsuarioToken(String token) throws DataBaseException, LogicException;
 	/**
 	 * Definicion del metodo obtener usuario el cual permite obtener todos los usuarios de la bd
 	 * @return un lista con todos los usuarios que se encuentran almacenados en la bd

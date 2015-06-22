@@ -6,6 +6,7 @@ import java.util.List;
 
 
 
+
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -17,6 +18,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
+import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
 
 /**
  * * Clase en la cual se codifican los metodo que permiten hacer operaciones sobre
@@ -96,7 +98,7 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	 * @throws DataBaseException
 	 */
 	@Override
-	public Usuario obtenerUsuarioToken(String token) throws DataBaseException {
+	public Usuario obtenerUsuarioToken(String token) throws DataBaseException, LogicException {
 		log = Logger.getLogger(this.getClass());
 		Usuario usuario=null;
 		try{
@@ -115,7 +117,11 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 		}catch(HibernateException e){
 			log.error(e);
 			throw new DataBaseException(e, "Error obtendiendo un Usuario en la BD");
-		}catch(Exception e){
+		}catch(IndexOutOfBoundsException e){
+			log.error(e);
+			throw new LogicException("El token es invalido");
+		}
+		catch(Exception e){
 			log.error(e);
 			throw new DataBaseException(e, "Error obteniendo un Usuario en la BD");
 		}

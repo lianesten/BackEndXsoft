@@ -15,6 +15,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.google.gson.Gson;
+
 import co.edu.udea.ingenieriaweb.xsoftbackend.bl.UsuarioBl;
 import co.edu.udea.ingenieriaweb.xsoftbackend.bl.imp.SessionBLImp;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
@@ -49,22 +51,23 @@ public class UsuarioResource {
 	 * @throws DataBaseException
 	 */
 	@POST
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	public String guardarUsuario(@QueryParam("numeroId") String numeroId,
 			@QueryParam("nombres") String nombres, @QueryParam("apellidos") String apellidos,
 			@QueryParam("privilegio") int privilegio, @QueryParam("username") String username,
 			@QueryParam("password") String password, @QueryParam("email") String email) throws RemoteException{
 		Logger log = Logger.getLogger(this.getClass());
+		Gson gson = new Gson();
 		try{
 			usuarioBl.guardarUsuario(numeroId, nombres, apellidos, privilegio, username, password, email);
 		}catch(LogicException e){
 			log.error(e);
-			return e.getMessage();
+			gson.toJson(e.getMessage());
 		}catch(DataBaseException e){
 			log.error(e);
-			return e.getMessage();
+			return gson.toJson(e.getMessage());
 		}
-		return "";
+		return gson.toJson("El usuario se almaceno exitosamente en la DB");
 		
 	}
 	/**
@@ -122,23 +125,5 @@ public class UsuarioResource {
 		
 		return listaClientes;
 		
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public String validarUsuario(@QueryParam("username")  String username, 
-			@QueryParam("password") String password) throws RemoteException{
-		Logger log = Logger.getLogger(this.getClass());
-		try{
-			session.autenticar(username, password);
-			
-		}catch(DataBaseException e){
-			log.error(e.getMessage());
-			return e.getMessage();
-		}catch(LogicException e){
-			log.error(e.getMessage());
-			return e.getMessage();
-		}
-		return "";
 	}
 }
