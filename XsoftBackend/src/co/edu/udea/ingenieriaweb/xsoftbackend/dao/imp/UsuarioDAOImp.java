@@ -7,6 +7,7 @@ import java.util.List;
 
 
 
+
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -16,6 +17,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import co.edu.udea.ingenieriaweb.xsoftbackend.dao.UsuarioDAO;
+import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Cliente;
 import co.edu.udea.ingenieriaweb.xsoftbackend.dto.Usuario;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.DataBaseException;
 import co.edu.udea.ingenieriaweb.xsoftbackend.exception.LogicException;
@@ -63,8 +65,9 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 	@Override
 	public Usuario obtenerUsuario(String numeroId) throws DataBaseException {
 		log = Logger.getLogger(this.getClass());
-		Usuario usuario=null;
+		Session session = null;
 		try{
+			Usuario usuario= null;
 			//user = (Usuario) session.createQuery("SELECT usuario FROM Usuario WHERE numeroId="+numeroId).uniqueResult();
 			/*Obtenemos la sesion mediante la cual nos vamos a conectar*/
 			session = getSession();
@@ -76,8 +79,8 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			usuario =(Usuario)session.get(Usuario.class, numeroId);
 			
 			
-			
-			
+			return usuario;
+
 		}catch(HibernateException e){
 			log.error(e);
 			throw new DataBaseException(e, "Error obtendiendo un Usuario en la BD");
@@ -85,8 +88,6 @@ public class UsuarioDAOImp extends HibernateDaoSupport implements UsuarioDAO{
 			log.error(e);
 			throw new DataBaseException(e, "Error obteniendo un Usuario en la BD");
 		}
-		
-		return usuario;
 		
 	}
 	

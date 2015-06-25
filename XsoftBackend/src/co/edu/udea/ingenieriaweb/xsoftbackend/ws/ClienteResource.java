@@ -49,6 +49,7 @@ public class ClienteResource<E> {
 	@Autowired
 	UsuarioBl usuarioBL;
 	
+	
 	/**
 	 * Metodo que permite obtener la lista de todos los clientes en la DB
 	 * @return Lista con todos los cliente en la DB
@@ -132,13 +133,13 @@ public class ClienteResource<E> {
 			cliente = clienteBl.obtenerCliente(idCliente);
 		} catch (DataBaseException e) {
 			log.error(e);
-			return gson.toJson("Por favor intente mas tarde");
+			return gson.toJson("Por favor intente mas tarde error database");
 		} catch (LogicException e) {
 			log.error(e);
-			return gson.toJson("Por favor intente mas tarde");
+			return gson.toJson("Por favor intente mas tarde error logic");
 		} catch (Exception e) {
 			log.error(e);
-			return gson.toJson("Por favor intente mas tarde");
+			return gson.toJson("Por favor intente mas tarde, otro error");
 		}
 
 		if (cliente == null) {

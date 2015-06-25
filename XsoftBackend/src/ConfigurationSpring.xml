@@ -14,9 +14,9 @@
 
 		<property name="url" value="jdbc:mysql://localhost:3306/xsoftdb" />
 
-		<property name="username" value="xsoft" />
+		<property name="username" value="root" />
 
-		<property name="password" value="xsoft" />
+		<property name="password" value="" />
 	</bean>
 
 	<bean id="sessionFactory"
@@ -30,7 +30,7 @@
 				</value>
 				<value>co/edu/udea/ingenieriaweb/xsoftbackend/dao/mapping/Servicios.hbm.xml
 				</value>
-				<value>co/edu/udea/ingenieriaweb/xsoftbackend/dao/mapping/ServiciosVenta.hbm.xml
+				<value>co/edu/udea/ingenieriaweb/xsoftbackend/dao/mapping/Serviciosventa.hbm.xml
 				</value>
 				<value>co/edu/udea/ingenieriaweb/xsoftbackend/dao/mapping/Usuario.hbm.xml
 				</value>

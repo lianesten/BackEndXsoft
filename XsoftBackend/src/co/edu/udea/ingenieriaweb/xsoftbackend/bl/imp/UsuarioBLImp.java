@@ -96,8 +96,8 @@ public class UsuarioBLImp implements UsuarioBl{
 		usuario = usuarioDAO.obtenerUsuario(numeroId);
 		}catch(DataBaseException e){
 			Logger  log = Logger.getLogger(this.getClass());
-			log.error("Error en el almacenamiento de Cliente: " +e);
-			throw new DataBaseException(e, "Error almacenando un Usuario en la DB");
+			log.error("Error UsuarioBlImp obteniendo un usuario: " +e);
+			throw new DataBaseException(e, "Error UsuarioBlImp obteniendo un Usuario en la DB");
 			
 		}
 		return usuario;

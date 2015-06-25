@@ -75,15 +75,15 @@ public class VentaDAOImp extends HibernateDaoSupport implements VentaDAO {
 
 			/* Obtenemos la venta */
 			venta = (Venta) session.get(Venta.class, idVenta);
-
+			
 		} catch (HibernateException e) {
 			log.error(e);
 			throw new DataBaseException(e,
-					"Error almacenando un Venta en la BD");
+					"Error obteniendo un Venta en la BD");
 		} catch (Exception e) {
 			log.error(e);
 			throw new DataBaseException(e,
-					"Error almacenando un venta en la BD");
+					"Error obteniendo un venta en la BD");
 		}
 		return venta;
 	}

@@ -96,7 +96,7 @@ public class VentaBLImp implements VentaBl {
 
 		} catch (DataBaseException e) {
 			Logger log = Logger.getLogger(this.getClass());
-			log.error("Error en el almacenamiento de Venta: " + e);
+			log.error("Error en el obteniendo de Venta: " + e);
 
 		}
 		return venta;
